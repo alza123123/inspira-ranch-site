@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Inspira Ranch — Livingston, TX</title>
+  <meta name="description" content="Contact Inspira Ranch. Questions about events, packages, or availability. Call +1 8324515923 or email marketing@konfronta.mx." />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>emailjs.init("YOUR_PUBLIC_KEY");</script>
+</head>
+<body>
+
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo-text">Inspira Ranch</a>
+    <div class="nav-links" id="nav-links">
+      <a href="../index.html" data-key="nav.home">Home</a>
+      <a href="about.html" data-key="nav.about">About</a>
+      <a href="services.html" data-key="nav.services">Services</a>
+      <a href="contact.html" data-key="nav.contact">Contact</a>
+      <a href="../blog.html" data-key="nav.blog">Blog</a>
+      <a href="../index.html#gallery" data-key="nav.gallery">Gallery</a>
+      <button id="langBtn" onclick="toggleLang()" class="lang-toggle">🌐 Español</button>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-content">
+    <span class="gold-label"><span class="lang en">Reach Us</span><span class="lang es">Contáctanos</span></span>
+    <h1><span class="lang en">Contact Us</span><span class="lang es">Contáctanos</span></h1>
+    <p><span class="lang en">Questions about availability, packages, or your event — we respond within 24 hours.</span><span class="lang es">Preguntas sobre disponibilidad, paquetes o tu evento — respondemos en 24 horas.</span></p>
+  </div>
+</div>
+
+<!-- CONTACT SECTION -->
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- LEFT: details + map -->
+      <div class="fade-in">
+        <h2 class="contact-details-title"><span class="lang en">Let's Plan<br/>Your Event</span><span class="lang es">Planifiquemos<br/>Tu Evento</span></h2>
+        <p style="color:var(--gray);margin-bottom:36px;font-size:0.95rem"><span class="lang en">Whether you're ready to book or just starting to explore — our team is here to answer every question and make the process effortless.</span><span class="lang es">Ya sea que estés listo para reservar o apenas comenzando a explorar — nuestro equipo está aquí para responder cada pregunta y hacer el proceso fácil.</span></p>
+
+        <div class="contact-item">
+          <span class="contact-item-icon">📞</span>
+          <div class="contact-item-text">
+            <strong><span class="lang en">Phone</span><span class="lang es">Teléfono</span></strong>
+            <p><a href="tel:+18324515923">+1 8324515923</a></p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <span class="contact-item-icon">✉</span>
+          <div class="contact-item-text">
+            <strong data-key="contact.email.label">Email</strong>
+            <p><a href="mailto:marketing@konfronta.mx">marketing@konfronta.mx</a></p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <span class="contact-item-icon">📍</span>
+          <div class="contact-item-text">
+            <strong><span class="lang en">Address</span><span class="lang es">Dirección</span></strong>
+            <p><span class="lang en">638 Mill Gate Rd<br/>Livingston, TX 77351</span><span class="lang es">638 Mill Gate Rd<br/>Livingston, TX 77351</span></p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <span class="contact-item-icon">★</span>
+          <div class="contact-item-text">
+            <strong><span class="lang en">Rating</span><span class="lang es">Calificación</span></strong>
+            <p style="color:var(--gold)">★★★★★ <span style="color:var(--gray)">— <span class="lang en">5 Star Rated Venue</span><span class="lang es">Venue 5 Estrellas</span></span></p>
+          </div>
+        </div>
+
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps?q=638+Mill+Gate+Rd,+Livingston,+TX+77351&output=embed"
+            width="100%" height="320"
+            style="border:0;filter:grayscale(30%);display:block;"
+            loading="lazy"
+            title="Inspira Ranch Location">
+          </iframe>
+        </div>
+
+        <!-- Photo strip below map -->
+        <div class="contact-photos">
+          <img src="../img/album-d460253150-downloads-pt1/A-2.jpg" alt="Inspira Ranch horse statue and entrance" loading="lazy" style="background-color:#0D1B3E" />
+          <img src="../img/album-d460253150-downloads-pt1/A-13.jpg" alt="Inspira Ranch covered bar and pool area" loading="lazy" style="background-color:#0D1B3E" />
+          <img src="../img/album-d460253150-downloads-pt1/album-d460900028-downloads/T-20.jpg" alt="Inspira Ranch bedroom accommodation" loading="lazy" style="background-color:#0D1B3E" />
+        </div>
+      </div>
+
+      <!-- RIGHT: form -->
+      <div class="contact-form-wrap fade-in">
+        <!-- Dining banner at top of form column -->
+        <div class="contact-dining-banner" style="margin-bottom:36px">
+          <img src="../img/album-d460253150-downloads-pt1/album-d460900028-downloads/T-19.jpg" alt="Inspira Ranch ranch approach driveway" loading="lazy" style="background-color:#0D1B3E" />
+          <div class="contact-dining-overlay">
+            <span><span class="lang en">Visit Us</span><span class="lang es">Visítanos</span></span>
+          </div>
+        </div>
+        <h3 class="contact-form-title"><span class="lang en">Send a Message</span><span class="lang es">Envía un Mensaje</span></h3>
+        <p class="contact-form-sub"><span class="lang en">We read every message directly and respond promptly.</span><span class="lang es">Leemos cada mensaje directamente y respondemos rápidamente.</span></p>
+
+        <form id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="name" data-key="contact.form.name">Your Name</label>
+            <input type="text" id="name" name="from_name" required
+                   data-key-placeholder="contact.form.name.placeholder" placeholder="Full name">
+          </div>
+          <div class="form-group">
+            <label for="email" data-key="contact.form.email">Your Email</label>
+            <input type="email" id="email" name="reply_to" required
+                   data-key-placeholder="contact.form.email.placeholder" placeholder="email@example.com">
+          </div>
+          <div class="form-group">
+            <label for="phone" data-key="contact.form.phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone"
+                   data-key-placeholder="contact.form.phone.placeholder" placeholder="+1 8324515923">
+          </div>
+          <div class="form-group">
+            <label for="message" data-key="contact.form.message">Message</label>
+            <textarea id="message" name="message" rows="5" required
+                      data-key-placeholder="contact.form.message.placeholder" placeholder="Tell us about your event..."></textarea>
+          </div>
+          <button type="submit" id="submitBtn">
+            <span data-key="contact.form.submit">Send Message</span>
+          </button>
+          <p id="formStatus" class="form-status"></p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section-dark" style="padding:80px 24px">
+  <div class="container" style="max-width:760px">
+    <div class="text-center" style="margin-bottom:56px">
+      <span class="gold-label"><span class="lang en">Quick Answers</span><span class="lang es">Respuestas Rápidas</span></span>
+      <h2><span class="lang en">Common Questions</span><span class="lang es">Preguntas Frecuentes</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h4><span class="lang en">Where exactly is Inspira Ranch?</span><span class="lang es">¿Dónde está exactamente Inspira Ranch?</span></h4>
+        <p><span class="lang en">638 Mill Gate Rd, Livingston, TX 77351 — in the heart of East Texas with unlimited on site parking for all guests.</span><span class="lang es">638 Mill Gate Rd, Livingston, TX 77351 — en el corazón del Este de Texas con estacionamiento ilimitado en el sitio para todos los invitados.</span></p>
+      </div>
+      <div class="faq-item">
+        <h4><span class="lang en">How do I get pricing?</span><span class="lang es">¿Cómo obtengo precios?</span></h4>
+        <p><span class="lang en">All packages are priced by consultation. Fill out the form above or call +1 8324515923 and we'll send a custom quote based on your date, guest count, and package preference — typically within 24 hours.</span><span class="lang es">Todos los paquetes tienen precios al consultar. Llena el formulario arriba o llama al +1 8324515923 y te enviaremos una cotización personalizada según tu fecha, número de invitados y paquete preferido — generalmente en 24 horas.</span></p>
+      </div>
+      <div class="faq-item">
+        <h4><span class="lang en">Can I visit before booking?</span><span class="lang es">¿Puedo visitar antes de reservar?</span></h4>
+        <p><span class="lang en">Yes. We welcome prospective clients to tour the property. Contact us to schedule a visit — see the chapel, lodging, event spaces, and 14 acres before committing.</span><span class="lang es">Sí. Damos la bienvenida a clientes potenciales para recorrer la propiedad. Contáctanos para programar una visita — ve la capilla, el alojamiento, los espacios de eventos y los 14 acres antes de comprometerte.</span></p>
+      </div>
+      <div class="faq-item">
+        <h4><span class="lang en">What is the catering arrangement?</span><span class="lang es">¿Cómo funciona el catering?</span></h4>
+        <p><span class="lang en">Catering buffet (included in Platino and Oro packages) is delivered to the property — not cooked on site. A reheating kitchen is available for all packages. BYOB is permitted across all packages.</span><span class="lang es">El catering buffet (incluido en los paquetes Platino y Oro) se entrega en la propiedad — no se cocina en el lugar. Una cocina de recalentamiento está disponible para todos los paquetes. BYOB está permitido en todos los paquetes.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="../img/logo-full.png" alt="Inspira Ranch" class="footer-logo"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="footer-logo-text" style="display:none">Inspira Ranch</span>
+      <p data-key="footer.tagline">Livingston, TX · 14 Acres</p>
+    </div>
+    <div class="footer-links">
+      <strong data-key="footer.links">Quick Links</strong>
+      <a href="../index.html" data-key="nav.home">Home</a>
+      <a href="about.html" data-key="nav.about">About</a>
+      <a href="services.html" data-key="nav.services">Services</a>
+      <a href="contact.html" data-key="nav.contact">Contact</a>
+      <a href="../blog.html" data-key="nav.blog">Blog</a>
+    </div>
+    <div class="footer-contact">
+      <strong data-key="footer.contact">Contact</strong>
+      <span>+1 8324515923</span>
+      <span>marketing@konfronta.mx</span>
+      <span>638 Mill Gate Rd<br>Livingston, TX 77351</span>
+    </div>
+  </div>
+  <div class="footer-monogram">
+    <img src="../img/logo-monogram.png" alt="IR" onerror="this.style.display='none'">
+  </div>
+  <div class="footer-copy">
+    <span data-key="footer.copy">© 2026 Inspira Ranch. All rights reserved.</span>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script src="../js/lang.js"></script>
+<script src="../js/animations.js"></script>
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  const status = document.getElementById('formStatus');
+  btn.disabled = true;
+  btn.querySelector('[data-key]').textContent = 'Sending...';
+
+  emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+    .then(function() {
+      status.textContent = 'Message sent! We will be in touch shortly.';
+      status.style.color = '#2E8B57';
+      document.getElementById('contactForm').reset();
+      btn.disabled = false;
+      btn.querySelector('[data-key]').textContent = 'Send Message';
+    }, function(error) {
+      status.textContent = 'Something went wrong. Please email us directly at marketing@konfronta.mx';
+      status.style.color = '#8B0000';
+      btn.disabled = false;
+      btn.querySelector('[data-key]').textContent = 'Send Message';
+    });
+});
+</script>
+<script src="../chatbot/widget.js"></script>
+</body>
+</html>

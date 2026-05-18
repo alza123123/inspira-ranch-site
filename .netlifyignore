@@ -1,0 +1,6 @@
+node_modules/
+.env
+.env.local
+img/Downloads/*.dmg
+img/Downloads/*.pkg
+img/Downloads/*.pdf

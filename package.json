@@ -1,0 +1,10 @@
+{
+  "name": "inspira-ranch",
+  "version": "1.0.0",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.24.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^26.0.2"
+  }
+}

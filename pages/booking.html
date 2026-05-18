@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Your Event | Inspira Ranch — Livingston, TX</title>
+  <meta name="description" content="Reserve your event at Inspira Ranch. Choose your package (Platino, Oro, Plata, Bronce) and we'll confirm availability within 24 hours." />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo-text">Inspira Ranch</a>
+    <div class="nav-links" id="nav-links">
+      <a href="../index.html" data-key="nav.home">Home</a>
+      <a href="about.html" data-key="nav.about">About</a>
+      <a href="services.html" data-key="nav.services">Services</a>
+      <a href="contact.html" data-key="nav.contact">Contact</a>
+      <a href="../blog.html" data-key="nav.blog">Blog</a>
+      <a href="../index.html#gallery" data-key="nav.gallery">Gallery</a>
+      <button id="langBtn" onclick="toggleLang()" class="lang-toggle">🌐 Español</button>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero booking-hero">
+  <div class="page-hero-content">
+    <span class="gold-label"><span class="lang en">Begin Here</span><span class="lang es">Comienza Aquí</span></span>
+    <h1><span class="lang en">Reserve Your Event</span><span class="lang es">Reserva Tu Evento</span></h1>
+    <p><span class="lang en">Select your package, submit your details, and we'll confirm availability and pricing within 24 hours.</span><span class="lang es">Selecciona tu paquete, envía tus detalles y confirmaremos disponibilidad y precios en 24 horas.</span></p>
+  </div>
+</div>
+
+<!-- PACKAGE SELECTOR -->
+<section class="section-dark">
+  <div class="container">
+    <div class="text-center fade-in" style="margin-bottom:0">
+      <span class="gold-label"><span class="lang en">Step 1 — Choose Your Package</span><span class="lang es">Paso 1 — Elige Tu Paquete</span></span>
+      <h2><span class="lang en">Our Packages</span><span class="lang es">Nuestros Paquetes</span></h2>
+      <p style="color:var(--gray);margin-top:16px"><span class="lang en">Click a package to pre-select it in the booking form below.</span><span class="lang es">Haz clic en un paquete para preseleccionarlo en el formulario de reserva abajo.</span></p>
+    </div>
+
+    <div class="pkg-select-grid">
+      <div class="pkg-select-card" data-pkg="bronce" onclick="selectPackage('bronce')">
+        <h3 data-key="booking.pkg.bronce">Paquete Bronce</h3>
+        <span class="pkg-price-sm">Consultar Precio</span>
+        <ul>
+          <li><span class="lang en">Hall, tables &amp; chairs</span><span class="lang es">Salón, mesas y sillas</span></li>
+          <li><span class="lang en">Unlimited parking</span><span class="lang es">Estacionamiento ilimitado</span></li>
+          <li><span class="lang en">Reheating kitchen</span><span class="lang es">Cocina de recalentamiento</span></li>
+          <li>BYOB</li>
+        </ul>
+        <button class="btn-outline" style="font-size:11px;padding:10px 24px"><span class="lang en">Select</span><span class="lang es">Seleccionar</span></button>
+      </div>
+      <div class="pkg-select-card" data-pkg="plata" onclick="selectPackage('plata')">
+        <h3 data-key="booking.pkg.plata">Paquete Plata</h3>
+        <span class="pkg-price-sm">Consultar Precio</span>
+        <ul>
+          <li><span class="lang en">Exclusive access from 7 AM</span><span class="lang es">Acceso exclusivo desde 7 AM</span></li>
+          <li><span class="lang en">Tables, chairs &amp; linens</span><span class="lang es">Mesas, sillas y mantelería</span></li>
+          <li><span class="lang en">Chapel &amp; security</span><span class="lang es">Capilla y seguridad</span></li>
+          <li><span class="lang en">Private prep room</span><span class="lang es">Habitación de preparativos</span></li>
+        </ul>
+        <button class="btn-outline" style="font-size:11px;padding:10px 24px"><span class="lang en">Select</span><span class="lang es">Seleccionar</span></button>
+      </div>
+      <div class="pkg-select-card" data-pkg="oro" onclick="selectPackage('oro')">
+        <h3 data-key="booking.pkg.oro">Paquete Oro</h3>
+        <span class="pkg-price-sm">Consultar Precio</span>
+        <ul>
+          <li><span class="lang en">Apartamento weekend stay</span><span class="lang es">Estadía fin de semana — Apartamento</span></li>
+          <li><span class="lang en">Catering buffet</span><span class="lang es">Catering buffet</span></li>
+          <li><span class="lang en">Horse &amp; carriage (2 hrs)</span><span class="lang es">Caballo y carreta (2 horas)</span></li>
+          <li><span class="lang en">Chapel &amp; security</span><span class="lang es">Capilla y seguridad</span></li>
+        </ul>
+        <button class="btn-outline" style="font-size:11px;padding:10px 24px"><span class="lang en">Select</span><span class="lang es">Seleccionar</span></button>
+      </div>
+      <div class="pkg-select-card" data-pkg="platino" onclick="selectPackage('platino')" style="position:relative">
+        <span style="position:absolute;top:16px;right:16px;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,160,46,0.4);padding:3px 10px"><span class="lang en">Most Complete</span><span class="lang es">Más Completo</span></span>
+        <h3 data-key="booking.pkg.platino">Paquete Platino</h3>
+        <span class="pkg-price-sm">Consultar Precio</span>
+        <ul>
+          <li><span class="lang en">Casa Principal + Apartamento</span><span class="lang es">Casa Principal + Apartamento</span></li>
+          <li><span class="lang en">Professional DJ + catering buffet</span><span class="lang es">DJ profesional + catering buffet</span></li>
+          <li><span class="lang en">Horse &amp; carriage + photo session</span><span class="lang es">Caballo y carreta + sesión de fotos</span></li>
+          <li><span class="lang en">Chapel, security + all amenities</span><span class="lang es">Capilla, seguridad + todas las amenidades</span></li>
+        </ul>
+        <button class="btn-outline" style="font-size:11px;padding:10px 24px"><span class="lang en">Select</span><span class="lang es">Seleccionar</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING FORM -->
+<section class="booking-form-section section-black" id="booking-form">
+  <div class="container">
+    <div class="text-center fade-in" style="margin-bottom:48px">
+      <span class="gold-label"><span class="lang en">Step 2 — Your Details</span><span class="lang es">Paso 2 — Tus Detalles</span></span>
+      <h2><span class="lang en">Request Your Date</span><span class="lang es">Solicita Tu Fecha</span></h2>
+      <p style="color:var(--gray);margin-top:12px"><span class="lang en">Fill out the form and we'll confirm availability and send pricing within 24 hours. · +1 8324515923 · marketing@konfronta.mx</span><span class="lang es">Llena el formulario y confirmaremos disponibilidad y enviaremos precios en 24 horas. · +1 8324515923 · marketing@konfronta.mx</span></p>
+    </div>
+
+    <div class="booking-form-box fade-in">
+      <form id="booking-form-el" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="b-first"><span class="lang en">First Name</span><span class="lang es">Nombre</span></label>
+            <input type="text" id="b-first" name="first_name" placeholder="Jane" required />
+          </div>
+          <div class="form-group">
+            <label for="b-last"><span class="lang en">Last Name</span><span class="lang es">Apellido</span></label>
+            <input type="text" id="b-last" name="last_name" placeholder="Smith" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="b-email">Email</label>
+            <input type="email" id="b-email" name="email" placeholder="jane@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="b-phone"><span class="lang en">Phone</span><span class="lang es">Teléfono</span></label>
+            <input type="tel" id="b-phone" name="phone" placeholder="(832) 000-0000" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="b-package"><span class="lang en">Package</span><span class="lang es">Paquete</span></label>
+            <select id="b-package" name="package" required>
+              <option value=""><span class="lang en">Select package…</span><span class="lang es">Selecciona paquete…</span></option>
+              <option value="platino">Paquete Platino</option>
+              <option value="oro">Paquete Oro</option>
+              <option value="plata">Paquete Plata</option>
+              <option value="bronce">Paquete Bronce</option>
+              <option value="custom"><span class="lang en">Not sure yet</span><span class="lang es">Aún no lo sé</span></option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="b-type"><span class="lang en">Event Type</span><span class="lang es">Tipo de Evento</span></label>
+            <select id="b-type" name="event_type" required>
+              <option value=""><span class="lang en">Select type…</span><span class="lang es">Selecciona tipo…</span></option>
+              <option>Quinceañera</option>
+              <option>Wedding / Bodas</option>
+              <option>Corporate Retreat / Retiro Corporativo</option>
+              <option>Business Conference / Conferencia</option>
+              <option>Family Celebration / Celebración Familiar</option>
+              <option>Lodging / Alojamiento</option>
+              <option>Other / Otro</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="b-date"><span class="lang en">Event Date</span><span class="lang es">Fecha del Evento</span></label>
+            <input type="date" id="b-date" name="event_date" required />
+          </div>
+          <div class="form-group">
+            <label for="b-guests"><span class="lang en">Guest Count</span><span class="lang es">Número de Invitados</span></label>
+            <select id="b-guests" name="guests" required>
+              <option value=""><span class="lang en">Select…</span><span class="lang es">Selecciona…</span></option>
+              <option>Under 50</option>
+              <option>50–100</option>
+              <option>100–200</option>
+              <option>200–300</option>
+              <option>300+</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="b-notes"><span class="lang en">Additional Notes</span><span class="lang es">Notas Adicionales</span></label>
+          <textarea id="b-notes" name="notes" placeholder="Describe your event, special requests, add on questions, lodging needs…" data-key-placeholder="booking.notes.placeholder"></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%;text-align:center;font-size:12px"><span class="lang en">Submit Booking Request</span><span class="lang es">Enviar Solicitud de Reserva</span></button>
+        <div class="form-success" id="booking-success">
+          <span class="lang en">✓ Request received! We'll confirm availability and send pricing within 24 hours.</span><span class="lang es">✓ ¡Solicitud recibida! Confirmaremos disponibilidad y enviaremos precios en 24 horas.</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="booking-faq">
+  <div class="container">
+    <div class="text-center fade-in" style="margin-bottom:56px">
+      <span class="gold-label"><span class="lang en">Before You Submit</span><span class="lang es">Antes de Enviar</span></span>
+      <h2><span class="lang en">Frequently Asked</span><span class="lang es">Preguntas Frecuentes</span></h2>
+    </div>
+    <div class="faq-list fade-in">
+      <div class="faq-item">
+        <h4><span class="lang en">How is pricing determined?</span><span class="lang es">¿Cómo se determinan los precios?</span></h4>
+        <p><span class="lang en">All packages are "Consultar Precio" — pricing depends on your event date, guest count, and package selection. Submit the form and we'll send a custom quote within 24 hours.</span><span class="lang es">Todos los paquetes son "Consultar Precio" — el precio depende de tu fecha, número de invitados y selección de paquete. Envía el formulario y te enviaremos una cotización personalizada en 24 horas.</span></p>
+      </div>
+      <div class="faq-item">
+        <h4><span class="lang en">Is a deposit required to hold my date?</span><span class="lang es">¿Se requiere un depósito para reservar mi fecha?</span></h4>
+        <p><span class="lang en">Yes. A deposit is required to confirm your date. Full deposit and payment schedule details are included with your custom quote.</span><span class="lang es">Sí. Se requiere un depósito para confirmar tu fecha. Los detalles completos del depósito y el plan de pagos se incluyen con tu cotización personalizada.</span></p>
+      </div>
+      <div class="faq-item">
+        <h4><span class="lang en">What does "exclusive property access from 7 AM" mean?</span><span class="lang es">¿Qué significa "acceso exclusivo desde las 7 AM"?</span></h4>
+        <p><span class="lang en">Your event gets the entire 14 acre property starting at 7:00 AM on your event day. No other events are booked simultaneously — the ranch is yours completely.</span><span class="lang es">Tu evento tiene toda la propiedad de 14 acres comenzando a las 7:00 AM el día de tu evento. No se reservan otros eventos simultáneamente — el rancho es completamente tuyo.</span></p>
+      </div>
+      <div class="faq-item">
+        <h4><span class="lang en">Can I add services not included in my package?</span><span class="lang es">¿Puedo agregar servicios no incluidos en mi paquete?</span></h4>
+        <p><span class="lang en">Yes. DJ, catering buffet, horse &amp; carriage, additional lodging, centerpieces, and security can be added to any package. Mention your desired add ons in the notes field.</span><span class="lang es">Sí. DJ, catering buffet, caballo y carreta, alojamiento adicional, centros de mesa y seguridad se pueden agregar a cualquier paquete. Menciona tus complementos deseados en el campo de notas.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="../img/logo-full.png" alt="Inspira Ranch" class="footer-logo"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="footer-logo-text" style="display:none">Inspira Ranch</span>
+      <p data-key="footer.tagline">Livingston, TX · 14 Acres</p>
+    </div>
+    <div class="footer-links">
+      <strong data-key="footer.links">Quick Links</strong>
+      <a href="../index.html" data-key="nav.home">Home</a>
+      <a href="about.html" data-key="nav.about">About</a>
+      <a href="services.html" data-key="nav.services">Services</a>
+      <a href="contact.html" data-key="nav.contact">Contact</a>
+      <a href="../blog.html" data-key="nav.blog">Blog</a>
+      <a href="../index.html#gallery" data-key="nav.gallery">Gallery</a>
+    </div>
+    <div class="footer-contact">
+      <strong data-key="footer.contact">Contact</strong>
+      <span>+1 8324515923</span>
+      <span>marketing@konfronta.mx</span>
+      <span>638 Mill Gate Rd<br>Livingston, TX 77351</span>
+    </div>
+  </div>
+  <div class="footer-monogram">
+    <img src="../img/logo-monogram.png" alt="IR" onerror="this.style.display='none'">
+  </div>
+  <div class="footer-copy">
+    <span data-key="footer.copy">© 2026 Inspira Ranch. All rights reserved.</span>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script src="../js/lang.js"></script>
+<script src="../js/animations.js"></script>
+<script src="../chatbot/widget.js"></script>
+</body>
+</html>

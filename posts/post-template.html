@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{TITLE}} | Inspira Ranch Blog</title>
+  <meta name="description" content="{{EXCERPT}}" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .post-hero {
+      padding: 10rem 1.5rem 4rem;
+      background: linear-gradient(160deg, rgba(44,44,44,0.6), rgba(107,66,38,0.5)),
+                  url('{{FEATURED_IMAGE}}') center/cover no-repeat;
+      text-align: center;
+      color: white;
+    }
+    .post-hero h1 { font-size: clamp(1.8rem, 4vw, 3rem); margin-bottom: 1rem; line-height: 1.2; }
+    .post-meta {
+      font-family: 'Arial', sans-serif;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.75);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .post-meta .cat {
+      background: rgba(201,168,76,0.3);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 0.25rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .post-body {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem 5rem;
+    }
+    .post-body h2 {
+      color: var(--brown);
+      font-size: 1.5rem;
+      margin: 2rem 0 0.8rem;
+    }
+    .post-body h3 {
+      color: var(--brown);
+      font-size: 1.2rem;
+      margin: 1.5rem 0 0.6rem;
+    }
+    .post-body p {
+      font-family: 'Arial', sans-serif;
+      color: #444;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+    }
+    .post-body li {
+      font-family: 'Arial', sans-serif;
+      color: #444;
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 0.4rem;
+      margin-left: 1.5rem;
+    }
+    .post-body ul, .post-body ol { margin-bottom: 1.2rem; }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: 'Arial', sans-serif;
+      font-size: 0.9rem;
+      color: var(--sage);
+      text-decoration: none;
+      margin-bottom: 2rem;
+    }
+    .back-link:hover { color: var(--brown); }
+    .post-footer-cta {
+      background: var(--cream);
+      border-radius: 16px;
+      padding: 2.5rem;
+      text-align: center;
+      margin-top: 4rem;
+    }
+    .post-footer-cta h3 { color: var(--brown); margin-bottom: 0.6rem; }
+    .post-footer-cta p { font-family: 'Arial', sans-serif; color: #666; margin-bottom: 1.5rem; }
+  </style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo-text">Inspira Ranch</a>
+    <div class="nav-links" id="nav-links">
+      <a href="../index.html" data-key="nav.home">Home</a>
+      <a href="../pages/about.html" data-key="nav.about">About</a>
+      <a href="../pages/services.html" data-key="nav.services">Services</a>
+      <a href="../pages/contact.html" data-key="nav.contact">Contact</a>
+      <a href="../blog.html" data-key="nav.blog">Blog</a>
+      <button id="langBtn" onclick="toggleLang()" class="lang-toggle">🌐 Español</button>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- POST HERO -->
+<div class="post-hero">
+  <span class="section-label" style="color:var(--gold)">{{CATEGORY}}</span>
+  <h1>{{TITLE}}</h1>
+  <div class="post-meta">
+    <span class="cat">{{CATEGORY}}</span>
+    <span>By {{AUTHOR}}</span>
+    <span>{{DATE}}</span>
+    <span>{{READ_TIME}} min read</span>
+  </div>
+</div>
+
+<div class="breadcrumb">
+  <a href="../index.html">Home</a> › <a href="../blog.html">Blog</a> › {{TITLE}}
+</div>
+
+<!-- POST BODY -->
+<div class="post-body">
+  <a href="../blog.html" class="back-link">← Back to Blog</a>
+
+  {{BODY}}
+
+  <!-- CTA -->
+  <div class="post-footer-cta">
+    <h3>Ready to Host Your Event at Inspira Ranch?</h3>
+    <p>Located — 14 private acres in Livingston, TX. Call +1 8324515923 or email marketing@konfronta.mx to check availability.</p>
+    <a href="../pages/booking.html" class="btn-primary">Book Your Event</a>
+    <a href="../pages/contact.html" class="btn-secondary" style="border-color:var(--brown);color:var(--brown);background:transparent;margin-left:0.8rem">Contact Us</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="../img/logo-full.png" alt="Inspira Ranch" class="footer-logo"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="footer-logo-text" style="display:none">Inspira Ranch</span>
+      <p data-key="footer.tagline">Livingston, TX · 14 Acres</p>
+    </div>
+    <div class="footer-links">
+      <strong data-key="footer.links">Quick Links</strong>
+      <a href="../index.html" data-key="nav.home">Home</a>
+      <a href="../pages/about.html" data-key="nav.about">About</a>
+      <a href="../pages/services.html" data-key="nav.services">Services</a>
+      <a href="../pages/contact.html" data-key="nav.contact">Contact</a>
+      <a href="../blog.html" data-key="nav.blog">Blog</a>
+    </div>
+    <div class="footer-contact">
+      <strong data-key="footer.contact">Contact</strong>
+      <span>+1 8324515923</span>
+      <span>marketing@konfronta.mx</span>
+      <span>638 Mill Gate Rd<br>Livingston, TX 77351</span>
+    </div>
+  </div>
+  <div class="footer-monogram">
+    <img src="../img/logo-monogram.png" alt="IR" onerror="this.style.display='none'">
+  </div>
+  <div class="footer-copy">
+    <span data-key="footer.copy">© 2026 Inspira Ranch. All rights reserved.</span>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script src="../js/lang.js"></script>
+<script src="../js/animations.js"></script>
+</body>
+</html>

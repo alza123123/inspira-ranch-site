@@ -1,0 +1,9 @@
+node_modules/
+.env
+.env.local
+.DS_Store
+*.DS_Store
+.netlify/
+img/Downloads/*.dmg
+img/Downloads/*.pkg
+img/Downloads/*.pdf

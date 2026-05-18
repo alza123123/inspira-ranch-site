@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Inspira Ranch — Events &amp; Inspiration from East Texas</title>
+  <meta name="description" content="The Inspira Ranch blog — event inspiration, venue updates, Konfronta business insights, and stories from East Texas." />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .blog-coming-soon { display: none; }
+    .blog-coming-soon.show { display: block; }
+  </style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo-text">Inspira Ranch</a>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html" data-key="nav.home">Home</a>
+      <a href="pages/about.html" data-key="nav.about">About</a>
+      <a href="pages/services.html" data-key="nav.services">Services</a>
+      <a href="pages/contact.html" data-key="nav.contact">Contact</a>
+      <a href="blog.html" data-key="nav.blog">Blog</a>
+      <a href="index.html#gallery" data-key="nav.gallery">Gallery</a>
+      <button id="langBtn" onclick="toggleLang()" class="lang-toggle">🌐 Español</button>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero" style="position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;z-index:0">
+    <img src="img/album-d460253150-downloads-pt1/A-5.jpg"
+         alt="Inspira Ranch horse statue and event hall" loading="eager"
+         style="width:100%;height:100%;object-fit:cover;background-color:#0D1B3E;display:block">
+  </div>
+  <div class="page-hero-overlay" style="background:linear-gradient(rgba(13,27,62,0.55),rgba(8,12,20,0.88));position:absolute;inset:0;z-index:1"></div>
+  <div class="page-hero-content" style="position:relative;z-index:2">
+    <span class="gold-label" data-key="hero.label">LIVINGSTON, TEXAS · 14 ACRES</span>
+    <h1 data-key="blog.title">Our Blog</h1>
+    <p data-key="blog.subtitle">Stories from the Ranch</p>
+  </div>
+</div>
+
+<!-- BLOG POSTS -->
+<section class="blog-section">
+  <div class="container">
+    <!-- POSTS_START -->
+    <div id="posts-container" class="blog-post-list">
+
+      <a href="posts/best-livingston-event-venue.html" class="blog-post-item" style="text-decoration:none">
+        <div class="blog-post-img">
+          <img src="img/album-d460253150-downloads-pt1/A-32.jpg"
+               alt="Inspira Ranch covered patio and fire pit — Livingston, TX event venue"
+               loading="lazy" style="background-color:#0D1B3E" />
+        </div>
+        <div class="blog-post-text">
+          <span class="blog-post-meta">Event Venues · May 2026 · 6 min read</span>
+          <h3 data-key="blog.post1.title">The Best Livingston Event Venue for Every Occasion</h3>
+          <p data-key="blog.post1.excerpt">Most venues do one thing well. Inspira Ranch was built differently — 14 private acres in East Texas handling weddings, quinceañeras, corporate retreats, and milestone celebrations with equal care and a 5 star record.</p>
+          <span class="text-link" data-key="blog.readmore">Read More</span>
+        </div>
+      </a>
+
+    </div>
+    <!-- POSTS_END -->
+
+    <div id="no-posts" class="blog-empty blog-coming-soon">
+      <span class="blog-ornament">✦</span>
+      <p class="blog-empty-text"><span class="lang en">Stories coming soon.</span><span class="lang es">Historias próximamente.</span></p>
+      <p style="color:var(--gray);font-size:0.88rem;margin-top:20px;font-family:var(--font-body)"><span class="lang en">We're preparing articles on event planning in East Texas, Konfronta business insights, and stories from the ranch.</span><span class="lang es">Preparamos artículos sobre planificación de eventos en el Este de Texas, ideas empresariales Konfronta e historias del rancho.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section">
+  <div class="container">
+    <div class="newsletter-inner fade-in">
+      <span class="gold-label"><span class="lang en">Stay Connected</span><span class="lang es">Mantente Conectado</span></span>
+      <h2><span class="lang en">Get Updates<br/>From the Ranch</span><span class="lang es">Recibe Actualizaciones<br/>del Rancho</span></h2>
+      <p><span class="lang en">New posts, event inspiration, open dates, and Konfronta event announcements — direct to your inbox.</span><span class="lang es">Nuevos artículos, inspiración para eventos, fechas disponibles y anuncios de eventos Konfronta — directo a tu correo.</span></p>
+      <form class="newsletter-form" onsubmit="event.preventDefault();this.innerHTML='<p style=\'color:var(--gold);font-family:var(--font-body);font-size:0.95rem;padding:14px 0\'>✓ <span class=\\'lang en\\'>You\'re on the list.</span><span class=\\'lang es\\'>Estás en la lista.</span></p>'">
+        <input type="email" placeholder="your@email.com" required />
+        <button type="submit" class="btn-primary"><span class="lang en">Subscribe</span><span class="lang es">Suscribirse</span></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="img/logo-full.png" alt="Inspira Ranch" class="footer-logo"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="footer-logo-text" style="display:none">Inspira Ranch</span>
+      <p data-key="footer.tagline">Livingston, TX · 14 Acres</p>
+    </div>
+    <div class="footer-links">
+      <strong data-key="footer.links">Quick Links</strong>
+      <a href="index.html" data-key="nav.home">Home</a>
+      <a href="pages/about.html" data-key="nav.about">About</a>
+      <a href="pages/services.html" data-key="nav.services">Services</a>
+      <a href="pages/contact.html" data-key="nav.contact">Contact</a>
+      <a href="blog.html" data-key="nav.blog">Blog</a>
+      <a href="index.html#gallery" data-key="nav.gallery">Gallery</a>
+    </div>
+    <div class="footer-contact">
+      <strong data-key="footer.contact">Contact</strong>
+      <span>+1 8324515923</span>
+      <span>marketing@konfronta.mx</span>
+      <span>638 Mill Gate Rd<br>Livingston, TX 77351</span>
+    </div>
+  </div>
+  <div class="footer-monogram">
+    <img src="img/logo-monogram.png" alt="IR" onerror="this.style.display='none'">
+  </div>
+  <div class="footer-copy">
+    <span data-key="footer.copy">© 2026 Inspira Ranch. All rights reserved.</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/lang.js"></script>
+<script src="js/animations.js"></script>
+<script>
+  const postsContainer = document.getElementById('posts-container');
+  const noPosts = document.getElementById('no-posts');
+  if (postsContainer && !postsContainer.querySelector('.blog-post-item')) {
+    if (noPosts) noPosts.classList.add('show');
+  }
+</script>
+<script src="chatbot/widget.js"></script>
+</body>
+</html>

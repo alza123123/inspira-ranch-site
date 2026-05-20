@@ -69,7 +69,7 @@ const translations = {
   'blog.post1.excerpt': { en: 'Most venues do one thing well. Inspira Ranch was built differently — 14 private acres in East Texas handling weddings, quinceañeras, corporate retreats, and milestone celebrations with equal care and a 5 star record.', es: 'La mayoría de los venues se especializan en una sola cosa. Inspira Ranch fue construido diferente — 14 acres privados en el Este de Texas para bodas, quinceañeras, retiros corporativos y celebraciones memorables, todos atendidos con el mismo nivel de excelencia.' },
 
   'post.cta.h3': { en: 'Ready to Host at Inspira Ranch?', es: '¿Listo para Celebrar en Inspira Ranch?' },
-  'post.cta.p':  { en: '14 private acres in Livingston, TX. Call +1 8324515923 or email marketing@konfronta.mx to check your date. We respond within 24 hours.', es: '14 acres privados en Livingston, TX. Llama al +1 8324515923 o escribe a marketing@konfronta.mx para verificar tu fecha. Respondemos en 24 horas.' },
+  'post.cta.p':  { en: '14 private acres in Livingston, TX. Call +1 (832) 451-5923 or email marketing@konfronta.mx to check your date. We respond within 24 hours.', es: '14 acres privados en Livingston, TX. Llama al +1 (832) 451-5923 o escribe a marketing@konfronta.mx para verificar tu fecha. Respondemos en 24 horas.' },
 
   'contact.message.placeholder': { en: 'Tell us about your event — guest count, package interest, questions…', es: 'Cuéntanos sobre tu evento — número de invitados, paquete de interés, preguntas…' },
   'booking.notes.placeholder':   { en: 'Describe your event, special requests, add on questions, lodging needs…', es: 'Describe tu evento, peticiones especiales, preguntas sobre complementos, necesidades de alojamiento…' },
@@ -102,7 +102,7 @@ const translations = {
   'contact.form.email':               { en: 'Your Email',      es: 'Tu Correo' },
   'contact.form.email.placeholder':   { en: 'email@example.com', es: 'correo@ejemplo.com' },
   'contact.form.phone':               { en: 'Phone Number',    es: 'Número de Teléfono' },
-  'contact.form.phone.placeholder':   { en: '+1 8324515923',   es: '+1 8324515923' },
+  'contact.form.phone.placeholder':   { en: '+1 (832) 451-5923',   es: '+1 (832) 451-5923' },
   'contact.form.message':             { en: 'Message',         es: 'Mensaje' },
   'contact.form.message.placeholder': { en: 'Tell us about your event...', es: 'Cuéntanos sobre tu evento...' },
   'contact.form.submit':              { en: 'Send Message',    es: 'Enviar Mensaje' },

@@ -16,8 +16,8 @@ const translations = {
   'stat.dedicated': { en: 'Dedicated to Your Event',   es: 'Dedicados a Tu Evento' },
 
   'about.label': { en: 'OUR STORY', es: 'NUESTRA HISTORIA' },
-  'about.h2':    { en: 'Built for the moments that matter most.', es: 'Construido para los momentos que más importan.' },
-  'about.body':  { en: "Inspira Ranch is a premier 14 acre event destination in Livingston, TX. Founded by Melecio Ortega, we host weddings, quinceañeras, private retreats, and corporate events in a stunning natural setting. Rated 5 stars by every guest we've had the honor of hosting.", es: 'Inspira Ranch es un destino de eventos de primer nivel con 14 acres en Livingston, TX. Fundado por Melecio Ortega, organizamos bodas, quinceañeras, retiros privados y eventos corporativos en un entorno natural impresionante. Calificado con 5 estrellas por cada invitado que hemos tenido el honor de recibir.' },
+  'about.h2':    { en: "The name 'Inspira' is no coincidence.", es: "El nombre 'Inspira' no es casualidad." },
+  'about.body':  { en: "It has a deep and strategic purpose. 'Inspira' is the core of what we seek to achieve: igniting a spark in people, in entrepreneurs, in leaders. Founded by Melecio Ortega on 14 private acres in Livingston, TX — a 5 star destination for weddings, quinceañeras, corporate retreats, and transformational conferences.", es: "Tiene un propósito profundo y estratégico. 'Inspira' es el núcleo de lo que buscamos lograr: encender una chispa en las personas, en los empresarios, en los líderes. Fundado por Melecio Ortega en 14 acres privados en Livingston, TX — un destino de 5 estrellas para bodas, quinceañeras, retiros corporativos y conferencias transformadoras." },
   'about.link':  { en: 'Meet the team →', es: 'Conoce al equipo →' },
 
   'amenities.label': { en: 'THE PROPERTY',                       es: 'LA PROPIEDAD' },

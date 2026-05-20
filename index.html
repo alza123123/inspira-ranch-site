@@ -22,8 +22,9 @@
     .svc-card-body { padding: 2rem; }
     .svc-card-body h3 { font-family: 'Playfair Display', serif; color: #0D1B3E; font-size: 1.25rem; margin-bottom: .75rem; }
     .svc-card-body p { color: #374151; font-size: .95rem; line-height: 1.65; margin-bottom: 1.25rem; }
-    .svc-card-link { color: #C9A02E; font-weight: 600; text-decoration: none; font-size: .9rem; letter-spacing: .04em; }
-    .svc-card-link:hover { text-decoration: underline; }
+    /* Gold on white card violates contrast rule — use navy instead */
+    .svc-card-link { color: #0D1B3E; font-weight: 600; text-decoration: none; font-size: .9rem; letter-spacing: .04em; border-bottom: 1px solid #C9A02E; display: inline-block; }
+    .svc-card-link:hover { color: #C9A02E; }
 
     /* Packages section */
     .idx-packages { padding: 5rem 0; background: #0D1B3E; }

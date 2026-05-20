@@ -71,6 +71,8 @@ section { padding: 100px 24px; }
 .section-light { background: var(--off-white); color: var(--warm-gray); }
 .section-light h2,
 .section-light h3 { color: var(--navy); }
+/* Higher-specificity override: section-header h2 (color:#fff) must not bleed into light sections */
+.section-light .section-header h2 { color: var(--navy); }
 
 /* ── GOLD LABEL ── */
 .gold-label {
@@ -1577,7 +1579,8 @@ img { background: #0D1B3E; }
 .about-text h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); color: var(--navy); margin: 16px 0 24px; line-height: 1.2; }
 .about-text p { color: var(--warm-gray); line-height: 1.9; font-size: 0.95rem; margin-bottom: 32px; }
 .text-link { color: var(--gold); font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid var(--gold); padding-bottom: 3px; }
-.gold-label.dark { color: var(--gold); }
+/* gold-label.dark = gold label for use on LIGHT backgrounds — must be navy, not gold */
+.gold-label.dark { color: var(--navy); }
 @media (max-width: 900px) {
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
   .about-photo img { height: 300px; }
@@ -1653,7 +1656,7 @@ img { background: #0D1B3E; }
 /* ── INDEX REDESIGN — CTA BANNER ───────────────────────────── */
 .cta-banner {
   background: linear-gradient(rgba(8,12,20,0.65), rgba(8,12,20,0.65)),
-              url('../img/property-landscape.jpg') center/cover fixed;
+              url('../img/live/venue-08.jpg') center/cover fixed;
   text-align: center;
   padding: 120px 24px;
 }

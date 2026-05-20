@@ -98,6 +98,13 @@ const translations = {
   'gallery.label': { en: 'THE RANCH', es: 'EL RANCHO' },
   'gallery.title': { en: 'Photo Gallery', es: 'Galería de Fotos' },
 
+  'gallery.grounds':    { en: 'The Grounds',   es: 'Los Jardines'     },
+  'gallery.mainhouse':  { en: 'Main House',     es: 'Casa Principal'   },
+  'gallery.apartment':  { en: 'The Apartment',  es: 'El Apartamento'   },
+  'gallery.eventhall':  { en: 'Event Hall',     es: 'Salon de Eventos' },
+  'gallery.chapel':     { en: 'Chapel',         es: 'Capilla'          },
+  'gallery.recreation': { en: 'Recreation',     es: 'Area de Juegos'   },
+
   'contact.form.name':                { en: 'Your Name',       es: 'Tu Nombre' },
   'contact.form.name.placeholder':    { en: 'Full name',       es: 'Nombre completo' },
   'contact.form.email':               { en: 'Your Email',      es: 'Tu Correo' },

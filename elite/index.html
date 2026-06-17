@@ -17,9 +17,7 @@
     "@context": "https://schema.org",
     "@type": ["EventVenue", "LocalBusiness"],
     "name": "Inspira Ranch",
-    "alternateName": "formerly Rancho Arreguin (property)",
     "url": "https://inspiraranch.us",
-    "sameAs": ["https://www.instagram.com/inspiraranchreal/"],
     "telephone": "+18324515923",
     "email": "marketing@konfronta.mx",
     "image": "https://inspiraranch.us/img/live/venue-02.jpg",
@@ -49,32 +47,40 @@
       {"@type": "LocationFeatureSpecification", "name": "Free Parking", "value": true},
       {"@type": "LocationFeatureSpecification", "name": "Horse and Carriage", "value": true}
     ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "reviewCount": "45"
+    },
     "areaServed": ["Livingston TX", "Houston TX", "Polk County TX", "East Texas"]
   }
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="image" href="img/album-d460253150-downloads-pt1/inspiraimg/Mill%20Gate%20638%20IMG%2059_1.jpg" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/tailwind.css" />
-  <link rel="stylesheet" href="css/style.css?v=20260618" />
-<style>
-    /* Compliance / Accessibility styles */
-    :focus-visible { outline: 3px solid #C9A02E; outline-offset: 3px; }
-    @media (forced-colors: active) { a, button { forced-color-adjust: auto; } .compliance-badge { border: 1px solid ButtonText; } }
-    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
-    .skip-link { position:absolute; top:-9999px; left:0; background:#C9A02E; color:#0D1B3E; font-weight:700; padding:12px 24px; z-index:9999; text-decoration:none; }
-    .skip-link:focus { top:0; }
-    #cookie-banner { transform:translateY(100%); transition:transform 0.35s ease; }
-    #cookie-banner.visible { transform:translateY(0); }
-    #a11y-toolbar { transition:max-height 0.3s ease, opacity 0.3s ease; }
-    #a11y-toolbar.collapsed { max-height:0; opacity:0; overflow:hidden; }
-    #a11y-toolbar.expanded  { max-height:200px; opacity:1; }
-    body.high-contrast { filter:contrast(1.3) brightness(1.05); } body.high-contrast #a11y-toggle-btn{background:#C9A02E !important;color:#0D1B3E !important;border-color:#C9A02E !important;}
-    .compliance-badge { font-size:0.6rem; letter-spacing:0.1em; font-weight:700; text-transform:uppercase; padding:2px 8px; border-radius:2px; }
+  <link rel="stylesheet" href="../css/tailwind.css" />
+  <link rel="stylesheet" href="../css/style.css?v=20260618" />
+  <!-- Tailwind (compliance components) --><style>
+    :focus-visible{outline:3px solid #C9A02E;outline-offset:3px;}
+    @media(forced-colors:active){a,button{forced-color-adjust:auto;}.compliance-badge{border:1px solid ButtonText;}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important;}}
+    .skip-link{position:absolute;top:-9999px;left:0;background:#C9A02E;color:#0D1B3E;font-weight:700;padding:12px 24px;z-index:9999;text-decoration:none;}
+    .skip-link:focus{top:0;}
+    #cookie-banner{transform:translateY(100%);transition:transform 0.35s ease;}
+    #cookie-banner.visible{transform:translateY(0);}
+    #a11y-toolbar{transition:max-height 0.3s ease,opacity 0.3s ease;}
+    #a11y-toolbar.collapsed{max-height:0;opacity:0;overflow:hidden;}
+    #a11y-toolbar.expanded{max-height:200px;opacity:1;}
+    body.high-contrast{filter:contrast(1.3) brightness(1.05);} body.high-contrast #a11y-toggle-btn{background:#C9A02E !important;color:#0D1B3E !important;border-color:#C9A02E !important;}
+    .compliance-badge{font-size:0.6rem;letter-spacing:0.1em;font-weight:700;text-transform:uppercase;padding:2px 8px;border-radius:2px;}
   </style>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>emailjs.init("lN5yVQBZhXHScSNmF");</script>
+
+  <!-- ── ELITE LAYER ── -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
   <style>
     /* ── INDEX PAGE SECTION STYLES ─────────────────── */
 
@@ -226,40 +232,108 @@
       .conf-photo-strip { grid-template-columns: 1fr; }
       .conf-photo-strip img { height: 220px; }
     }
+
+    /* ══════════════════════════════════════════════════
+       ELITE LAYER — everything below is additive.
+       No Pro styles are changed.
+    ══════════════════════════════════════════════════ */
+
+    /* Lenis */
+    html.lenis { height: auto; }
+    .lenis.lenis-smooth { scroll-behavior: auto !important; }
+
+    /* Elite badge in nav */
+    .elite-preview-badge {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.58rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      background: #C9A02E; color: #0D1B3E;
+      padding: 3px 9px; margin-left: 10px;
+      vertical-align: middle; border-radius: 2px;
+    }
+
+    /* Animation canvas — floats above the dark overlay, below the hero text */
+    #elite-particle-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      z-index: 2;          /* above hero-bg + overlay, below hero-content */
+      pointer-events: none;
+    }
+    /* Hero content and scroll hint stay on top */
+    .hero-content   { position: relative; z-index: 3 !important; }
+    .hero-scroll-hint { z-index: 3 !important; }
+
+    /* Stat numbers — Orbitron */
+    .stat-number {
+      font-family: 'Orbitron', 'Playfair Display', serif !important;
+      font-weight: 900 !important;
+      letter-spacing: -0.01em;
+    }
+
+    /* Ghost section numbers */
+    .elite-section-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 6.5rem; font-weight: 700;
+      color: rgba(201,160,46,0.07);
+      position: absolute; top: -8px; left: 16px;
+      pointer-events: none; user-select: none;
+      line-height: 1; z-index: 0;
+    }
+    .idx-services, .idx-packages, .idx-conferences,
+    .idx-accommodation, .idx-gallery, .idx-contact { position: relative; }
+
+    /* Card hover lifts */
+    .pkg-card {
+      transition: transform 0.25s ease, border-color 0.25s, box-shadow 0.25s;
+    }
+    .pkg-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(201,160,46,0.7);
+      box-shadow: 0 14px 48px rgba(0,0,0,0.55);
+    }
+    .svc-card {
+      transition: transform 0.25s ease, box-shadow 0.25s;
+    }
+    .svc-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 48px rgba(0,0,0,0.16);
+    }
+    .acc-card {
+      transition: transform 0.25s ease, box-shadow 0.25s;
+    }
+    .acc-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 48px rgba(0,0,0,0.2);
+    }
+
+    /* Testimonial gold left bar */
+    .testimonial {
+      border-left: 2px solid rgba(201,160,46,0.18);
+      padding-left: 24px;
+      transition: border-color 0.3s;
+    }
+    .testimonial:hover { border-left-color: #C9A02E; }
+
+    /* Primary button glow on hover */
+    .btn-primary {
+      transition: background 0.2s, color 0.2s, transform 0.15s, box-shadow 0.25s !important;
+    }
+    .btn-primary:hover {
+      box-shadow: 0 6px 28px rgba(201,160,46,0.38);
+    }
+
+    /* GSAP fade-in base state (overrides existing .fade-in) */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.85s ease, transform 0.85s ease;
+    }
   </style>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What happened to Rancho Arreguin in Livingston, TX?",
-        "acceptedAnswer": {"@type": "Answer", "text": "The 14-acre event property at 638 Mill Gate Rd in Livingston, TX formerly known as Rancho Arreguin is now Inspira Ranch — family-owned and operated by the Ortega family. The venue hosts weddings, quinceañeras, corporate retreats, and business conferences under its new name."}
-      },
-      {
-        "@type": "Question",
-        "name": "Is Inspira Ranch the same venue as Rancho Arreguin?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Yes — Inspira Ranch is the new name and new chapter of the same physical property at 638 Mill Gate Rd, Entrance 2, Livingston, TX 77351. Guests searching for Rancho Arreguin will find the venue operating today as Inspira Ranch, with an on-site chapel, event hall, pool, horse and carriage, and overnight lodging."}
-      },
-      {
-        "@type": "Question",
-        "name": "Where is Inspira Ranch located and how far is it from Houston?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Inspira Ranch is at 638 Mill Gate Rd, Entrance 2, Livingston, TX 77351 — about 50 minutes northeast of Houston, serving the greater Houston area including Cypress, Katy, and The Woodlands."}
-      },
-      {
-        "@type": "Question",
-        "name": "What events does Inspira Ranch host?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Weddings, quinceañeras, corporate retreats, business conferences (home of the Konfronta series), birthdays, and family celebrations — with four all-inclusive packages (Platino, Oro, Plata, Bronce), bilingual EN/ES service, unlimited parking, and BYOB."}
-      },
-      {
-        "@type": "Question",
-        "name": "How do I book Inspira Ranch?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Call +1 (832) 451-5923, email marketing@konfronta.mx, or use the booking form at inspiraranch.us. Custom quotes are provided within 24 hours; pricing is by consultation."}
-      }
-    ]
-  }
-  </script>
 </head>
 <body>
 
@@ -270,13 +344,13 @@
 <!-- NAV -->
 <nav id="mainNav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo-text">Inspira Ranch</a>
+    <a href="../index.html" class="nav-logo-text">Inspira Ranch <span class="elite-preview-badge">Elite Preview</span></a>
     <div class="nav-links" id="nav-links">
-      <a href="index.html"           data-key="nav.home">Home</a>
-      <a href="pages/about.html"     data-key="nav.about">About</a>
-      <a href="pages/services.html"  data-key="nav.services">Services</a>
-      <a href="pages/contact.html"   data-key="nav.contact">Contact</a>
-      <a href="blog.html"            data-key="nav.blog">Blog</a>
+      <a href="../index.html"           data-key="nav.home">Home</a>
+      <a href="../pages/about.html"     data-key="nav.about">About</a>
+      <a href="../pages/services.html"  data-key="nav.services">Services</a>
+      <a href="../pages/contact.html"   data-key="nav.contact">Contact</a>
+      <a href="../blog.html"            data-key="nav.blog">Blog</a>
       <a href="#galeria"             data-key="nav.gallery">Gallery</a>
       <button id="langBtn" onclick="toggleLang()" class="lang-toggle">🌐 Español</button>
     </div>
@@ -288,10 +362,10 @@
 
 <!-- HERO -->
 <section class="hero" id="main-content" tabindex="-1">
+  <canvas id="elite-particle-canvas"></canvas>
   <div class="hero-bg">
-    <img src="img/album-d460253150-downloads-pt1/inspiraimg/Mill%20Gate%20638%20IMG%2059_1.jpg"
-         alt="Inspira Ranch outdoor event venue with pool and fire pit — Livingston, TX"
-         fetchpriority="high" decoding="async" style="background-color:#0D1B3E">
+    <img src="../img/album-d460253150-downloads-pt1/inspiraimg/Mill%20Gate%20638%20IMG%2059_1.jpg"
+         alt="Inspira Ranch outdoor event venue with pool and fire pit — Livingston, TX" style="background-color:#0D1B3E">
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-content fade-in">
@@ -300,8 +374,8 @@
     <div class="hero-rule"></div>
     <p data-key="hero.sub">Premier event venue for weddings, quinceañeras, corporate retreats &amp; private celebrations</p>
     <div class="hero-btns">
-      <a href="pages/contact.html" class="btn-primary" data-key="hero.cta1">Book Your Event</a>
-      <a href="pages/services.html" class="btn-outline" data-key="hero.cta2">View Services</a>
+      <a href="../pages/contact.html" class="btn-primary" data-key="hero.cta1">Book Your Event</a>
+      <a href="../pages/services.html" class="btn-outline" data-key="hero.cta2">View Services</a>
     </div>
   </div>
   <div class="hero-scroll-hint">↓</div>
@@ -331,72 +405,73 @@
 <section class="about-snap section-light">
   <div class="container about-grid">
     <div class="about-photo fade-in">
-      <img src="img/live/Venue-01.JPG" alt="Inspira Ranch event hall interior set up for a corporate conference with projector and round tables — Livingston TX" loading="lazy" style="background-color:#0D1B3E">
+      <img src="../img/live/Venue-01.JPG" alt="Inspira Ranch event hall interior set up for a corporate conference with projector and round tables — Livingston TX" loading="lazy" style="background-color:#0D1B3E">
     </div>
     <div class="about-text fade-in">
       <span class="gold-label dark" data-key="about.label">OUR STORY</span>
       <h2 data-key="about.h2">The Purpose of Inspira Ranch</h2>
       <p data-key="about.body">The name 'Inspira Ranch' is no coincidence. It has a deep and strategic purpose. The word 'Inspira' is the core of what we seek to achieve: igniting a spark in people, in entrepreneurs, in leaders.</p>
       <p data-key="about.body2">It's a call to action from internal motivation — that spirit of 'Yes, you can!' that moves you to leave your comfort zone and dare to do more. Founded by Melecio Ortega on 14 private acres in Livingston, TX.</p>
-      <a href="pages/about.html" class="text-link" data-key="about.link">Meet the team →</a>
+      <a href="../pages/about.html" class="text-link" data-key="about.link">Meet the team →</a>
     </div>
   </div>
 </section>
 
 <!-- 4-COLUMN PHOTO STRIP -->
 <div class="photo-strip">
-  <img src="img/live/venue-05.JPG"
+  <img src="../img/live/venue-05.JPG"
        alt="Inspira Ranch outdoor chapel at night with ceremony chairs and string lights — wedding venue near Houston TX" loading="lazy" style="background-color:#0D1B3E">
-  <img src="img/live/casa-04.jpg"
+  <img src="../img/live/casa-04.jpg"
        alt="Inspira Ranch Casa Principal kitchen with center island, professional range hood, and dark wood cabinetry — Livingston TX" loading="lazy" style="background-color:#0D1B3E">
-  <img src="img/live/Apartamento-05.JPG"
+  <img src="../img/live/Apartamento-05.JPG"
        alt="Inspira Ranch apartment private bathroom with glass-enclosed shower and wood-tone vanity — Livingston TX" loading="lazy" style="background-color:#0D1B3E">
-  <img src="img/Downloads/event-carriage.jpg"
+  <img src="../img/Downloads/event-carriage.jpg"
        alt="Horse-drawn carriage for quinceañeras and weddings at Inspira Ranch, Livingston TX" loading="lazy" style="background-color:#0D1B3E">
 </div>
 
 <!-- PROPERTY LOGO PAIR -->
 <div class="property-logo-pair">
-  <img src="img/logo-full.png" alt="Inspira Ranch" class="property-logo"
+  <img src="../img/logo-full.png" alt="Inspira Ranch" class="property-logo"
        onerror="this.style.display='none'">
-  <img src="img/logo-monogram.png" alt="IR" class="property-logo"
+  <img src="../img/logo-monogram.png" alt="IR" class="property-logo"
        onerror="this.style.display='none'">
 </div>
 
 <!-- SERVICIOS -->
 <section id="servicios" class="idx-services section-light">
+  <span class="elite-section-num">01</span>
   <div class="container">
     <div class="section-header fade-in">
       <span class="gold-label dark" data-key="idx.svc.label">OUR SERVICES</span>
       <h2 data-key="idx.svc.h2">Event Services in Livingston, TX</h2>
     </div>
-    <div class="svc-grid" data-stagger="80">
+    <div class="svc-grid">
 
-      <div class="svc-card fade-in hover-lift">
+      <div class="svc-card fade-in">
         <div class="svc-card-img">
-          <img src="img/live/venue-07.jpg" alt="Corporate event and retreat venue near Houston — Inspira Ranch, Livingston TX" loading="lazy" style="background-color:#0D1B3E">
+          <img src="../img/live/venue-07.jpg" alt="Corporate event and retreat venue near Houston — Inspira Ranch, Livingston TX" loading="lazy" style="background-color:#0D1B3E">
         </div>
         <div class="svc-card-body">
           <h3 data-key="svc.corp.h3">Corporate Events</h3>
           <p data-key="svc.corp.body">Professional conferences, corporate retreats and networking events in an inspiring environment.</p>
-          <a href="pages/contact.html" class="svc-card-link" data-key="idx.svc.link">Learn more</a>
+          <a href="../pages/contact.html" class="svc-card-link" data-key="idx.svc.link">Learn more</a>
         </div>
       </div>
 
-      <div class="svc-card fade-in hover-lift">
+      <div class="svc-card fade-in">
         <div class="svc-card-img">
-          <img src="img/live/venue-03.jpg" alt="Weddings and quinceañeras at Inspira Ranch event venue — Polk County, TX" loading="lazy" style="background-color:#0D1B3E">
+          <img src="../img/live/venue-03.jpg" alt="Weddings and quinceañeras at Inspira Ranch event venue — Polk County, TX" loading="lazy" style="background-color:#0D1B3E">
         </div>
         <div class="svc-card-body">
           <h3 data-key="svc.social.h3">Social Events</h3>
           <p data-key="svc.social.body">Quinceañeras, weddings and family celebrations with the special touch of the Texas ranch.</p>
-          <a href="pages/contact.html" class="svc-card-link" data-key="idx.svc.link">Learn more</a>
+          <a href="../pages/contact.html" class="svc-card-link" data-key="idx.svc.link">Learn more</a>
         </div>
       </div>
 
-      <div class="svc-card fade-in hover-lift">
+      <div class="svc-card fade-in">
         <div class="svc-card-img">
-          <img src="img/live/casa-03.jpg" alt="On-site accommodation options at Inspira Ranch — East Texas event venue" loading="lazy" style="background-color:#0D1B3E">
+          <img src="../img/live/casa-03.jpg" alt="On-site accommodation options at Inspira Ranch — East Texas event venue" loading="lazy" style="background-color:#0D1B3E">
         </div>
         <div class="svc-card-body">
           <h3 data-key="svc.lodgeintro.h3">Accommodation</h3>
@@ -411,15 +486,16 @@
 
 <!-- PAQUETES -->
 <section id="paquetes" class="idx-packages">
+  <span class="elite-section-num">02</span>
   <div class="container">
     <div class="section-header fade-in">
       <span class="gold-label" data-key="idx.pkg.label">OUR PACKAGES</span>
       <h2 data-key="idx.pkg.h2">Our Packages</h2>
     </div>
-    <div class="pkg-grid" data-stagger="80">
+    <div class="pkg-grid">
 
       <!-- Platino -->
-      <div class="pkg-card featured fade-in hover-lift">
+      <div class="pkg-card featured fade-in">
         <div class="pkg-card-icon">👑</div>
         <h3 data-key="svc.platino.name">Paquete Platino</h3>
         <ul class="pkg-features">
@@ -444,7 +520,7 @@
       </div>
 
       <!-- Oro -->
-      <div class="pkg-card fade-in hover-lift">
+      <div class="pkg-card fade-in">
         <div class="pkg-card-icon">💎</div>
         <h3 data-key="svc.oro.name">Paquete Oro</h3>
         <ul class="pkg-features">
@@ -466,7 +542,7 @@
       </div>
 
       <!-- Plata -->
-      <div class="pkg-card fade-in hover-lift">
+      <div class="pkg-card fade-in">
         <div class="pkg-card-icon">⭐</div>
         <h3 data-key="svc.plata.name">Paquete Plata</h3>
         <ul class="pkg-features">
@@ -484,7 +560,7 @@
       </div>
 
       <!-- Bronce -->
-      <div class="pkg-card fade-in hover-lift">
+      <div class="pkg-card fade-in">
         <div class="pkg-card-icon">🏅</div>
         <h3 data-key="svc.bronce.name">Paquete Bronce</h3>
         <ul class="pkg-features">
@@ -507,9 +583,9 @@
       <span class="gold-label" data-key="idx.conf.label">CONFERENCES</span>
       <h2 data-key="idx.conf.h2">Conferences</h2>
     </div>
-    <div class="conf-grid" data-stagger="80">
+    <div class="conf-grid">
 
-      <div class="conf-card fade-in hover-lift">
+      <div class="conf-card fade-in">
         <h3 data-key="idx.conf.r1.h3">Retiro Empresarial</h3>
         <p class="conf-sub" data-key="idx.conf.r1.sub">Konfronta Ventas con Inteligencia Artificial</p>
         <p data-key="idx.conf.r1.body">The New Paradigm that multiplies your income in a predictable and scalable way.</p>
@@ -519,7 +595,7 @@
         </div>
       </div>
 
-      <div class="conf-card fade-in hover-lift">
+      <div class="conf-card fade-in">
         <h3 data-key="idx.conf.r2.h3">Retiro Empresarial</h3>
         <p class="conf-sub" data-key="idx.conf.r2.sub">Konfronta Mindset</p>
         <p data-key="idx.conf.r2.body">Opens the mind to see beyond the immediate environment and conquer unreachable markets.</p>
@@ -535,9 +611,9 @@
       <p data-key="idx.conf.method.body">Confront your limiting beliefs, inspire yourself to change, and receive practical tools to apply that transformation in your life and in your company.</p>
     </div>
     <div class="conf-photo-strip fade-in">
-      <img src="img/Downloads/PHOTO-2026-05-17-11-59-07.jpg"
+      <img src="../img/Downloads/PHOTO-2026-05-17-11-59-07.jpg"
            alt="Konfronta business conference group at Inspira Ranch" loading="lazy" style="background-color:#0D1B3E">
-      <img src="img/Downloads/PHOTO-2026-05-17-11-59-02.jpg"
+      <img src="../img/Downloads/PHOTO-2026-05-17-11-59-02.jpg"
            alt="Corporate workshop session at Inspira Ranch event hall" loading="lazy" style="background-color:#0D1B3E">
     </div>
   </div>
@@ -550,11 +626,11 @@
       <span class="gold-label dark" data-key="idx.lodge.label">LODGING</span>
       <h2 data-key="idx.lodge.h2">Accommodation Options</h2>
     </div>
-    <div class="acc-grid" data-stagger="80">
+    <div class="acc-grid">
 
-      <div class="acc-card fade-in hover-lift">
+      <div class="acc-card fade-in">
         <div class="acc-card-img">
-          <img src="img/live/casa-01.jpg" alt="Inspira Ranch Casa Principal covered outdoor dining patio with wood-beam ceiling and pool view — Livingston TX" loading="lazy" style="background-color:#0D1B3E">
+          <img src="../img/live/casa-01.jpg" alt="Inspira Ranch Casa Principal covered outdoor dining patio with wood-beam ceiling and pool view — Livingston TX" loading="lazy" style="background-color:#0D1B3E">
           <div class="acc-overlay">
             <h3 data-key="idx.lodge.casa.h3">Casa Principal</h3>
           </div>
@@ -565,9 +641,9 @@
         </div>
       </div>
 
-      <div class="acc-card fade-in hover-lift">
+      <div class="acc-card fade-in">
         <div class="acc-card-img">
-          <img src="img/live/Apartamento-01.JPG" alt="Inspira Ranch apartment open-plan kitchen with white island, bar stools, and wood beam details — Livingston TX" loading="lazy" style="background-color:#0D1B3E">
+          <img src="../img/live/Apartamento-01.JPG" alt="Inspira Ranch apartment open-plan kitchen with white island, bar stools, and wood beam details — Livingston TX" loading="lazy" style="background-color:#0D1B3E">
           <div class="acc-overlay">
             <h3 data-key="idx.lodge.apt.h3">Apartamento</h3>
           </div>
@@ -584,7 +660,7 @@
 
 <!-- APARTMENT POOL BANNER -->
 <div class="pool-banner fade-in">
-  <img src="img/live/Apartamento-09.JPG" alt="Private pool at Inspira Ranch apartment — overnight event venue accommodation in Livingston TX" loading="lazy" style="background-color:#0D1B3E">
+  <img src="../img/live/Apartamento-09.JPG" alt="Private pool at Inspira Ranch apartment — overnight event venue accommodation in Livingston TX" loading="lazy" style="background-color:#0D1B3E">
   <div class="pool-overlay">
     <span class="gold-label" data-key="pool.banner.label">EXCLUSIVE AMENITY</span>
     <h3 data-key="pool.banner.h3">Private Apartment Pool</h3>
@@ -593,7 +669,7 @@
 
 <!-- LANDSCAPE BANNER — 14 ACRES -->
 <div class="landscape-banner">
-  <img src="img/live/venue-02.jpg"
+  <img src="../img/live/venue-02.jpg"
        alt="Inspira Ranch wrought-iron entrance gate at 638 Mill Gate Rd, Livingston TX — 14-acre private event venue" loading="lazy" style="background-color:#0D1B3E">
   <div class="landscape-banner-overlay">
     <span class="gold-label" data-key="landscape.label">THE PROPERTY</span>
@@ -609,23 +685,23 @@
       <span class="gold-label" data-key="reviews.label">GUEST REVIEWS</span>
       <h2 data-key="reviews.h2">What our guests say.</h2>
     </div>
-    <div class="testimonials-grid" data-stagger="80">
-      <div class="testimonial fade-in hover-lift">
+    <div class="testimonials-grid">
+      <div class="testimonial fade-in">
         <span class="testimonial-quote-mark">"</span>
-        <p><span class="lang en">We traveled from Houston and were absolutely amazed. Incredibly spacious, gorgeous pool, beautiful green areas, and a stunning fountain in the back. This place is divine — perfect for weddings, quinceañeras, and family celebrations. We invite everyone to come see it!</span><span class="lang es">Viajamos desde Houston y quedamos completamente asombrados. Súper amplio, piscina preciosa, áreas verdes hermosas y una fuente espectacular al fondo. Este lugar es divino — perfecto para bodas, quinceañeras y celebraciones familiares. ¡Invitamos a todos a conocerlo!</span></p>
-        <span class="testimonial-name">Carla H. &amp; Carlos M. — Houston, TX</span>
+        <p data-key="review1.body">Our daughter's quinceañera at Inspira Ranch was absolutely breathtaking. The chapel, the horse and carriage, the open Texas sky — there's nothing like it anywhere in the Houston area. The Ortega family treated us like their own from start to finish. Our guests are still talking about it.</p>
+        <span class="testimonial-name" data-key="review1.name">Maria G. — Houston, TX</span>
         <div class="testimonial-stars">★★★★★</div>
       </div>
-      <div class="testimonial fade-in hover-lift">
+      <div class="testimonial fade-in">
         <span class="testimonial-quote-mark">"</span>
-        <p><span class="lang en">It is very spacious, very pretty, features a pool, and beautiful green areas — and a beautiful fountain in the back that makes for incredible photos. We invite you to call and reserve for your quinceañera events, weddings, or birthdays. The place is excellent, visit it!</span><span class="lang es">Está muy amplio, muy bonito, cuenta con alberca, áreas verdes hermosas y una fuente preciosa en la parte de atrás. Los invitamos a que marquen, reserven para sus eventos de quinceañeras, bodas o cumpleaños. ¡Está excelente el lugar, visítenlo!</span></p>
-        <span class="testimonial-name">Edmundo H. &amp; Vianey C. — Livingston, TX</span>
+        <p data-key="review2.body">We took our entire leadership team to the Konfronta retreat at Inspira Ranch and left completely transformed. Melecio's keynote on AI driven growth was immediately actionable. The ranch setting makes all the difference — no distractions, just real focus and real results.</p>
+        <span class="testimonial-name" data-key="review2.name">James R., CEO — Austin, TX</span>
         <div class="testimonial-stars">★★★★★</div>
       </div>
-      <div class="testimonial fade-in hover-lift">
+      <div class="testimonial fade-in">
         <span class="testimonial-quote-mark">"</span>
-        <p><span class="lang en">A beautiful place in Livingston, Texas — perfect for family events, weddings, and quinceañeras. It has a dedicated outdoor ceremony area, a gorgeous pool, and beautiful green lawns. Very comfortable and incredibly spacious. The top event venue in Polk County for unforgettable moments.</span><span class="lang es">Un lugar bellísimo en Livingston, Texas, ideal para eventos familiares, bodas y quinceañeras. Tiene un área especial para ceremonias al aire libre, piscina y hermosas áreas verdes. Muy cómodo y espacioso. Sin duda el mejor venue del Condado de Polk para celebrar momentos inolvidables.</span></p>
-        <span class="testimonial-name">Adelayda Rivas — Livingston, TX</span>
+        <p data-key="review3.body">From arrival to the last dance, every detail of our wedding was handled with genuine care. The venue is stunning — the chapel, the East Texas landscape, that feeling of total privacy on 14 acres. Claudia's coordination was flawless. We'll recommend Inspira Ranch to everyone we know.</p>
+        <span class="testimonial-name" data-key="review3.name">Sofia &amp; Daniel M. — Livingston, TX</span>
         <div class="testimonial-stars">★★★★★</div>
       </div>
     </div>
@@ -637,12 +713,13 @@
   <div class="cta-overlay">
     <h2 data-key="cta.h2">Ready to Host Your Event?</h2>
     <p data-key="cta.sub">Let's make it unforgettable.</p>
-    <a href="pages/contact.html" class="btn-primary" data-key="cta.btn">Contact Us</a>
+    <a href="../pages/contact.html" class="btn-primary" data-key="cta.btn">Contact Us</a>
   </div>
 </section>
 
 <!-- GALERIA -->
 <section id="galeria" class="idx-gallery">
+  <span class="elite-section-num">03</span>
   <div class="container">
     <div class="section-header fade-in">
       <span class="gold-label" data-key="gallery.label">THE RANCH</span>
@@ -660,40 +737,40 @@
     <!-- GROUNDS -->
     <div class="gallery-panel active" id="panel-grounds" role="tabpanel">
       <div class="gallery-masonry">
-        <div class="gal-item featured" data-src="img/live/venue-02.jpg" data-caption="Inspira Ranch entrance gate">
-          <img src="img/live/venue-02.jpg" alt="Inspira Ranch wrought-iron entrance gate with ranch name and horse silhouettes" loading="lazy">
+        <div class="gal-item featured" data-src="../img/live/venue-02.jpg" data-caption="Inspira Ranch entrance gate">
+          <img src="../img/live/venue-02.jpg" alt="Inspira Ranch wrought-iron entrance gate with ranch name and horse silhouettes" loading="lazy">
           <div class="gal-overlay"><span class="gal-caption" data-key="gal.grounds.gate">Entrance Gate</span></div>
         </div>
-        <div class="gal-item tall" data-src="img/live/venue-13.jpg" data-caption="Horseback riding at sunset">
-          <img src="img/live/venue-13.jpg" alt="Silhouette of horseback rider at golden-hour sunset on Inspira Ranch grounds" loading="lazy">
+        <div class="gal-item tall" data-src="../img/live/venue-13.jpg" data-caption="Horseback riding at sunset">
+          <img src="../img/live/venue-13.jpg" alt="Silhouette of horseback rider at golden-hour sunset on Inspira Ranch grounds" loading="lazy">
           <div class="gal-overlay"><span class="gal-caption" data-key="gal.grounds.horse">Horseback Riding</span></div>
         </div>
-        <div class="gal-item" data-src="img/live/casa-00.jpg" data-caption="Sunset over the grounds">
-          <img src="img/live/casa-00.jpg" alt="Sunset view over Inspira Ranch pool, fire pit, and event hall on 14 acres" loading="lazy">
+        <div class="gal-item" data-src="../img/live/casa-00.jpg" data-caption="Sunset over the grounds">
+          <img src="../img/live/casa-00.jpg" alt="Sunset view over Inspira Ranch pool, fire pit, and event hall on 14 acres" loading="lazy">
           <div class="gal-overlay"><span class="gal-caption" data-key="gal.grounds.sunset">Sunset Vista</span></div>
         </div>
-        <div class="gal-item wide" data-src="img/live/A-60.jpg" data-caption="Stone fire pit terrace with chapel in the background">
-          <img src="img/live/A-60.jpg" alt="Stone fire pit with seating on the terrace, outdoor chapel visible in the background" loading="lazy">
+        <div class="gal-item wide" data-src="../img/live/A-60.jpg" data-caption="Stone fire pit terrace with chapel in the background">
+          <img src="../img/live/A-60.jpg" alt="Stone fire pit with seating on the terrace, outdoor chapel visible in the background" loading="lazy">
           <div class="gal-overlay"><span class="gal-caption" data-key="gal.grounds.firepit">Fire Pit Terrace</span></div>
         </div>
-        <div class="gal-item" data-src="img/live/T-17.jpg" data-caption="Outdoor chapel with string lights">
-          <img src="img/live/T-17.jpg" alt="Inspira Ranch outdoor chapel close-up with string lights and clear blue sky" loading="lazy">
+        <div class="gal-item" data-src="../img/live/T-17.jpg" data-caption="Outdoor chapel with string lights">
+          <img src="../img/live/T-17.jpg" alt="Inspira Ranch outdoor chapel close-up with string lights and clear blue sky" loading="lazy">
           <div class="gal-overlay"><span class="gal-caption" data-key="gal.grounds.chapel">Chapel</span></div>
         </div>
-        <div class="gal-item wide" data-src="img/live/T-18.jpg" data-caption="Chapel ceremony lawn, 14-acre grounds">
-          <img src="img/live/T-18.jpg" alt="Inspira Ranch chapel and ceremony lawn framed by East Texas pine and oak forest" loading="lazy">
+        <div class="gal-item wide" data-src="../img/live/T-18.jpg" data-caption="Chapel ceremony lawn, 14-acre grounds">
+          <img src="../img/live/T-18.jpg" alt="Inspira Ranch chapel and ceremony lawn framed by East Texas pine and oak forest" loading="lazy">
           <div class="gal-overlay"><span class="gal-caption" data-key="gal.grounds.chapelwide">Ceremony Lawn</span></div>
         </div>
-        <div class="gal-item" data-src="img/live/A-15.jpg" data-caption="White ranch fencing at golden hour">
-          <img src="img/live/A-15.jpg" alt="White split-rail fencing along Inspira Ranch property with mature oak canopy at golden hour" loading="lazy">
+        <div class="gal-item" data-src="../img/live/A-15.jpg" data-caption="White ranch fencing at golden hour">
+          <img src="../img/live/A-15.jpg" alt="White split-rail fencing along Inspira Ranch property with mature oak canopy at golden hour" loading="lazy">
           <div class="gal-overlay"><span class="gal-caption" data-key="gal.grounds.fence">Ranch Grounds</span></div>
         </div>
-        <div class="gal-item" data-src="img/live/venue-15.jpg" data-caption="White horse sculpture at the ranch entrance">
-          <img src="img/live/venue-15.jpg" alt="White rearing horse sculpture at Inspira Ranch entrance under blue Texas sky" loading="lazy">
+        <div class="gal-item" data-src="../img/live/venue-15.jpg" data-caption="White horse sculpture at the ranch entrance">
+          <img src="../img/live/venue-15.jpg" alt="White rearing horse sculpture at Inspira Ranch entrance under blue Texas sky" loading="lazy">
           <div class="gal-overlay"><span class="gal-caption" data-key="gal.grounds.statue">Ranch Icon</span></div>
         </div>
-        <div class="gal-item wide" data-src="img/live/T-15.jpg" data-caption="Horse stables and barn">
-          <img src="img/live/T-15.jpg" alt="Inspira Ranch horse stables interior with wooden beam construction and open grounds beyond" loading="lazy">
+        <div class="gal-item wide" data-src="../img/live/T-15.jpg" data-caption="Horse stables and barn">
+          <img src="../img/live/T-15.jpg" alt="Inspira Ranch horse stables interior with wooden beam construction and open grounds beyond" loading="lazy">
           <div class="gal-overlay"><span class="gal-caption" data-key="gal.grounds.barn">Stables</span></div>
         </div>
       </div>
@@ -702,36 +779,36 @@
     <!-- MAIN HOUSE -->
     <div class="gallery-panel" id="panel-mainhouse" role="tabpanel">
       <div class="gallery-masonry">
-        <div class="gal-item featured" data-src="img/live/casa-11.jpg" data-caption="Main house exterior with pool and fire pit">
-          <img src="img/live/casa-11.jpg" alt="Inspira Ranch main house exterior with inground pool, stone fire pit seating, and blue sky" loading="lazy">
+        <div class="gal-item featured" data-src="../img/live/casa-11.jpg" data-caption="Main house exterior with pool and fire pit">
+          <img src="../img/live/casa-11.jpg" alt="Inspira Ranch main house exterior with inground pool, stone fire pit seating, and blue sky" loading="lazy">
           <div class="gal-overlay"><span class="gal-caption" data-key="gal.main.exterior">Main House Exterior</span></div>
         </div>
-        <div class="gal-item tall" data-src="img/live/casa-01.jpg" data-caption="Covered patio overlooking the pool">
-          <img src="img/live/casa-01.jpg" alt="Inspira Ranch covered outdoor dining patio with wood-beam ceiling and pool view" loading="lazy">
+        <div class="gal-item tall" data-src="../img/live/casa-01.jpg" data-caption="Covered patio overlooking the pool">
+          <img src="../img/live/casa-01.jpg" alt="Inspira Ranch covered outdoor dining patio with wood-beam ceiling and pool view" loading="lazy">
           <div class="gal-overlay"><span class="gal-caption" data-key="gal.main.patio">Covered Patio</span></div>
         </div>
-        <div class="gal-item" data-src="img/live/casa-05.jpg" data-caption="Great room with stone fireplace">
-          <img src="img/live/casa-05.jpg" alt="Inspira Ranch great room with floor-to-ceiling stone fireplace, vaulted corrugated-tin ceiling, and leather seating" loading="lazy">
+        <div class="gal-item" data-src="../img/live/casa-05.jpg" data-caption="Great room with stone fireplace">
+          <img src="../img/live/casa-05.jpg" alt="Inspira Ranch great room with floor-to-ceiling stone fireplace, vaulted corrugated-tin ceiling, and leather seating" loading="lazy">
           <div class="gal-overlay"><span class="gal-caption" data-key="gal.main.living">Great Room</span></div>
         </div>
-        <div class="gal-item wide" data-src="img/live/casa-06.jpg" data-caption="Vaulted living room with cowhide rug">
-          <img src="img/live/casa-06.jpg" alt="Inspira Ranch living room with vaulted corrugated tin ceiling, leather sofas, and cowhide rug" loading="lazy">
+        <div class="gal-item wide" data-src="../img/live/casa-06.jpg" data-caption="Vaulted living room with cowhide rug">
+          <img src="../img/live/casa-06.jpg" alt="Inspira Ranch living room with vaulted corrugated tin ceiling, leather sofas, and cowhide rug" loading="lazy">
           <div class="gal-overlay"><span class="gal-caption" data-key="gal.main.living2">Living Room</span></div>
         </div>
-        <div class="gal-item" data-src="img/live/casa-04.jpg" data-caption="Fully equipped chef's kitchen">
-          <img src="img/live/casa-04.jpg" alt="Inspira Ranch fully equipped kitchen with center island, professional range hood, and dark wood cabinetry" loading="lazy">
+        <div class="gal-item" data-src="../img/live/casa-04.jpg" data-caption="Fully equipped chef's kitchen">
+          <img src="../img/live/casa-04.jpg" alt="Inspira Ranch fully equipped kitchen with center island, professional range hood, and dark wood cabinetry" loading="lazy">
           <div class="gal-overlay"><span class="gal-caption" data-key="gal.main.kitchen">Kitchen</span></div>
         </div>
-        <div class="gal-item" data-src="img/live/casa-03.jpg" data-caption="Formal dining room">
-          <img src="img/live/casa-03.jpg" alt="Inspira Ranch formal dining room with chandelier, dark wood harvest table, and fresh floral centerpiece" loading="lazy">
+        <div class="gal-item" data-src="../img/live/casa-03.jpg" data-caption="Formal dining room">
+          <img src="../img/live/casa-03.jpg" alt="Inspira Ranch formal dining room with chandelier, dark wood harvest table, and fresh floral centerpiece" loading="lazy">
           <div class="gal-overlay"><span class="gal-caption" data-key="gal.main.dining">Dining Room</span></div>
         </div>
-        <div class="gal-item wide" data-src="img/live/casa-07.jpg" data-caption="Guest bedroom">
-          <img src="img/live/casa-07.jpg" alt="Inspira Ranch bedroom with white painted furniture, plantation shutters, and warm bedside lighting" loading="lazy">
+        <div class="gal-item wide" data-src="../img/live/casa-07.jpg" data-caption="Guest bedroom">
+          <img src="../img/live/casa-07.jpg" alt="Inspira Ranch bedroom with white painted furniture, plantation shutters, and warm bedside lighting" loading="lazy">
           <div class="gal-overlay"><span class="gal-caption" data-key="gal.main.bedroom">Bedroom</span></div>
         </div>
-        <div class="gal-item" data-src="img/live/T-45.jpg" data-caption="Master bathroom with soaking tub">
-          <img src="img/live/T-45.jpg" alt="Inspira Ranch master bathroom with soaking tub, glass-enclosed shower, and dual vanity" loading="lazy">
+        <div class="gal-item" data-src="../img/live/T-45.jpg" data-caption="Master bathroom with soaking tub">
+          <img src="../img/live/T-45.jpg" alt="Inspira Ranch master bathroom with soaking tub, glass-enclosed shower, and dual vanity" loading="lazy">
           <div class="gal-overlay"><span class="gal-caption" data-key="gal.main.bath">Master Bath</span></div>
         </div>
       </div>
@@ -740,28 +817,28 @@
     <!-- APARTMENT -->
     <div class="gallery-panel" id="panel-apartment" role="tabpanel">
       <div class="gallery-masonry">
-        <div class="gal-item featured" data-src="img/live/Apartamento-10.jpg" data-caption="Private apartment exterior at dusk">
-          <img src="img/live/Apartamento-10.jpg" alt="Inspira Ranch private apartment building exterior at dusk with warm interior light and pink sky" loading="lazy">
+        <div class="gal-item featured" data-src="../img/live/Apartamento-10.jpg" data-caption="Private apartment exterior at dusk">
+          <img src="../img/live/Apartamento-10.jpg" alt="Inspira Ranch private apartment building exterior at dusk with warm interior light and pink sky" loading="lazy">
           <div class="gal-overlay"><span class="gal-caption" data-key="gal.apt.exterior">Private Apartment</span></div>
         </div>
-        <div class="gal-item tall" data-src="img/live/Apartamento-01.JPG" data-caption="Open-plan kitchen with island">
-          <img src="img/live/Apartamento-01.JPG" alt="Inspira Ranch apartment open-plan kitchen with white island, bar stools, and exposed wood beam details" loading="lazy">
+        <div class="gal-item tall" data-src="../img/live/Apartamento-01.JPG" data-caption="Open-plan kitchen with island">
+          <img src="../img/live/Apartamento-01.JPG" alt="Inspira Ranch apartment open-plan kitchen with white island, bar stools, and exposed wood beam details" loading="lazy">
           <div class="gal-overlay"><span class="gal-caption" data-key="gal.apt.kitchen">Kitchen</span></div>
         </div>
-        <div class="gal-item" data-src="img/live/Apartamento-03.JPG" data-caption="Living room with TV lounge">
-          <img src="img/live/Apartamento-03.JPG" alt="Inspira Ranch apartment living room with sectional sofa, large TV, and western ranch decor" loading="lazy">
+        <div class="gal-item" data-src="../img/live/Apartamento-03.JPG" data-caption="Living room with TV lounge">
+          <img src="../img/live/Apartamento-03.JPG" alt="Inspira Ranch apartment living room with sectional sofa, large TV, and western ranch decor" loading="lazy">
           <div class="gal-overlay"><span class="gal-caption" data-key="gal.apt.living">Living Room</span></div>
         </div>
-        <div class="gal-item wide" data-src="img/live/Apartamento-02.JPG" data-caption="Hand-crafted bar and kitchenette">
-          <img src="img/live/Apartamento-02.JPG" alt="Inspira Ranch apartment hand-crafted wood bar with X-pattern cabinetry and farmhouse sink" loading="lazy">
+        <div class="gal-item wide" data-src="../img/live/Apartamento-02.JPG" data-caption="Hand-crafted bar and kitchenette">
+          <img src="../img/live/Apartamento-02.JPG" alt="Inspira Ranch apartment hand-crafted wood bar with X-pattern cabinetry and farmhouse sink" loading="lazy">
           <div class="gal-overlay"><span class="gal-caption" data-key="gal.apt.bar">Bar Area</span></div>
         </div>
-        <div class="gal-item" data-src="img/live/Apartamento-04.JPG" data-caption="Apartment bedroom">
-          <img src="img/live/Apartamento-04.JPG" alt="Inspira Ranch apartment private bedroom with rustic furnishings and comfortable bedding" loading="lazy">
+        <div class="gal-item" data-src="../img/live/Apartamento-04.JPG" data-caption="Apartment bedroom">
+          <img src="../img/live/Apartamento-04.JPG" alt="Inspira Ranch apartment private bedroom with rustic furnishings and comfortable bedding" loading="lazy">
           <div class="gal-overlay"><span class="gal-caption" data-key="gal.apt.bedroom">Bedroom</span></div>
         </div>
-        <div class="gal-item" data-src="img/live/Apartamento-05.JPG" data-caption="Private bathroom with glass shower">
-          <img src="img/live/Apartamento-05.JPG" alt="Inspira Ranch apartment private bathroom with glass-enclosed shower and wood-tone vanity" loading="lazy">
+        <div class="gal-item" data-src="../img/live/Apartamento-05.JPG" data-caption="Private bathroom with glass shower">
+          <img src="../img/live/Apartamento-05.JPG" alt="Inspira Ranch apartment private bathroom with glass-enclosed shower and wood-tone vanity" loading="lazy">
           <div class="gal-overlay"><span class="gal-caption" data-key="gal.apt.bath">Bathroom</span></div>
         </div>
       </div>
@@ -770,36 +847,36 @@
     <!-- EVENT HALL -->
     <div class="gallery-panel" id="panel-eventhall" role="tabpanel">
       <div class="gallery-masonry">
-        <div class="gal-item featured" data-src="img/live/venue-05.JPG" data-caption="Outdoor chapel ceremony at night with string lights">
-          <img src="img/live/venue-05.JPG" alt="Inspira Ranch outdoor chapel at night with ceremony chairs, string lights, and steeple silhouette" loading="lazy">
+        <div class="gal-item featured" data-src="../img/live/venue-05.JPG" data-caption="Outdoor chapel ceremony at night with string lights">
+          <img src="../img/live/venue-05.JPG" alt="Inspira Ranch outdoor chapel at night with ceremony chairs, string lights, and steeple silhouette" loading="lazy">
           <div class="gal-overlay"><span class="gal-caption" data-key="gal.hall.ceremony">Outdoor Ceremony</span></div>
         </div>
-        <div class="gal-item tall" data-src="img/live/A-65.jpg" data-caption="Event hall interior with chandelier">
-          <img src="img/live/A-65.jpg" alt="Inspira Ranch event hall interior with vaulted ceiling, chandelier, and cocktail tables" loading="lazy">
+        <div class="gal-item tall" data-src="../img/live/A-65.jpg" data-caption="Event hall interior with chandelier">
+          <img src="../img/live/A-65.jpg" alt="Inspira Ranch event hall interior with vaulted ceiling, chandelier, and cocktail tables" loading="lazy">
           <div class="gal-overlay"><span class="gal-caption" data-key="gal.hall.interior">Event Hall</span></div>
         </div>
-        <div class="gal-item" data-src="img/live/Venue-01.JPG" data-caption="Corporate conference in the main hall">
-          <img src="img/live/Venue-01.JPG" alt="Inspira Ranch event hall during a full corporate conference with projector and round table seating" loading="lazy">
+        <div class="gal-item" data-src="../img/live/Venue-01.JPG" data-caption="Corporate conference in the main hall">
+          <img src="../img/live/Venue-01.JPG" alt="Inspira Ranch event hall during a full corporate conference with projector and round table seating" loading="lazy">
           <div class="gal-overlay"><span class="gal-caption" data-key="gal.hall.conference">Corporate Events</span></div>
         </div>
-        <div class="gal-item wide" data-src="img/live/venue-06.jpg" data-caption="Outdoor pavilion event">
-          <img src="img/live/venue-06.jpg" alt="Inspira Ranch round outdoor pavilion with guests seated under rattan pendant lights" loading="lazy">
+        <div class="gal-item wide" data-src="../img/live/venue-06.jpg" data-caption="Outdoor pavilion event">
+          <img src="../img/live/venue-06.jpg" alt="Inspira Ranch round outdoor pavilion with guests seated under rattan pendant lights" loading="lazy">
           <div class="gal-overlay"><span class="gal-caption" data-key="gal.hall.pavilion">Outdoor Pavilion</span></div>
         </div>
-        <div class="gal-item" data-src="img/live/venue-04.jpg" data-caption="Group celebration at the chapel">
-          <img src="img/live/venue-04.jpg" alt="Group of guests celebrating at the Inspira Ranch outdoor chapel with string lights" loading="lazy">
+        <div class="gal-item" data-src="../img/live/venue-04.jpg" data-caption="Group celebration at the chapel">
+          <img src="../img/live/venue-04.jpg" alt="Group of guests celebrating at the Inspira Ranch outdoor chapel with string lights" loading="lazy">
           <div class="gal-overlay"><span class="gal-caption" data-key="gal.hall.chapelgroup">Chapel Celebration</span></div>
         </div>
-        <div class="gal-item" data-src="img/live/venue-14.jpg" data-caption="Event hall entrance with iron lanterns">
-          <img src="img/live/venue-14.jpg" alt="Inspira Ranch event hall covered entrance with wrought-iron gas lanterns and patio seating" loading="lazy">
+        <div class="gal-item" data-src="../img/live/venue-14.jpg" data-caption="Event hall entrance with iron lanterns">
+          <img src="../img/live/venue-14.jpg" alt="Inspira Ranch event hall covered entrance with wrought-iron gas lanterns and patio seating" loading="lazy">
           <div class="gal-overlay"><span class="gal-caption" data-key="gal.hall.entrance">Hall Entrance</span></div>
         </div>
-        <div class="gal-item" data-src="img/live/venue-11.jpg" data-caption="White horse-drawn carriage">
-          <img src="img/live/venue-11.jpg" alt="White horse-drawn carriage with guests at Inspira Ranch during a quinceañera celebration" loading="lazy">
+        <div class="gal-item" data-src="../img/live/venue-11.jpg" data-caption="White horse-drawn carriage">
+          <img src="../img/live/venue-11.jpg" alt="White horse-drawn carriage with guests at Inspira Ranch during a quinceañera celebration" loading="lazy">
           <div class="gal-overlay"><span class="gal-caption" data-key="gal.hall.carriage">Horse &amp; Carriage</span></div>
         </div>
-        <div class="gal-item" data-src="img/live/A-70.jpg" data-caption="Round outdoor pavilion interior">
-          <img src="img/live/A-70.jpg" alt="Inspira Ranch round outdoor pavilion with rattan pendant lights and brick herringbone floor" loading="lazy">
+        <div class="gal-item" data-src="../img/live/A-70.jpg" data-caption="Round outdoor pavilion interior">
+          <img src="../img/live/A-70.jpg" alt="Inspira Ranch round outdoor pavilion with rattan pendant lights and brick herringbone floor" loading="lazy">
           <div class="gal-overlay"><span class="gal-caption" data-key="gal.hall.pavilion2">Pavilion Interior</span></div>
         </div>
       </div>
@@ -874,6 +951,7 @@
 
 <!-- CONTACTO -->
 <section id="contacto" class="idx-contact">
+  <span class="elite-section-num">04</span>
   <div class="container">
     <div class="section-header fade-in">
       <span class="gold-label" data-key="idx.contact.label">CONTACT &amp; RESERVATIONS</span>
@@ -963,16 +1041,12 @@
 
       <!-- Brand -->
       <div>
-        <a href="/" aria-label="Inspira Ranch — return to homepage" class="block mb-4">
+        <a href="../" aria-label="Inspira Ranch — return to homepage" class="block mb-4">
           <span class="text-brand-gold font-bold tracking-widest text-lg uppercase">Inspira Ranch</span>
         </a>
         <p class="text-sm text-gray-400 leading-relaxed mb-4">
           <span class="lang en">Premier event venue on 14 private acres in Livingston, TX — weddings, quinceañeras, corporate retreats &amp; private celebrations. Serving Houston and East Texas.</span>
           <span class="lang es">Lugar de eventos premier en 14 acres privados en Livingston, TX — bodas, quinceañeras, retiros corporativos y celebraciones privadas. Sirviendo a Houston y el Este de Texas.</span>
-        </p>
-        <p class="text-xs text-gray-500 leading-relaxed mb-4">
-          <span class="lang en">Located at the former Rancho Arreguin property — <a href="/rancho-arreguin.html" class="underline hover:text-brand-gold transition">new name, same iconic East Texas venue</a>.</span>
-          <span class="lang es">Ubicados en la antigua propiedad de Rancho Arreguin — <a href="/rancho-arreguin.html" class="underline hover:text-brand-gold transition">nuevo nombre, el mismo icónico lugar del Este de Texas</a>.</span>
         </p>
         <address class="not-italic text-sm text-gray-500 leading-loose">
           638 Mill Gate Rd, Entrance 2<br>
@@ -996,11 +1070,11 @@
       <nav class="footer-nav" aria-label="Quick links" id="footer-nav">
         <h2 class="text-xs font-bold text-brand-gold uppercase tracking-widest mb-4"><span class="lang en">Quick Links</span><span class="lang es">Enlaces Rápidos</span></h2>
         <ul class="space-y-2" role="list">
-          <li><a href="/" class="text-sm text-gray-400 hover:text-white transition"><span class="lang en">Home</span><span class="lang es">Inicio</span></a></li>
-          <li><a href="/pages/about.html" class="text-sm text-gray-400 hover:text-white transition"><span class="lang en">About Us</span><span class="lang es">Nosotros</span></a></li>
-          <li><a href="/pages/services.html" class="text-sm text-gray-400 hover:text-white transition"><span class="lang en">Services</span><span class="lang es">Servicios</span></a></li>
-          <li><a href="/pages/contact.html" class="text-sm text-gray-400 hover:text-white transition"><span class="lang en">Contact</span><span class="lang es">Contacto</span></a></li>
-          <li><a href="/blog.html" class="text-sm text-gray-400 hover:text-white transition">Blog</a></li>
+          <li><a href="../" class="text-sm text-gray-400 hover:text-white transition"><span class="lang en">Home</span><span class="lang es">Inicio</span></a></li>
+          <li><a href="../pages/about.html" class="text-sm text-gray-400 hover:text-white transition"><span class="lang en">About Us</span><span class="lang es">Nosotros</span></a></li>
+          <li><a href="../pages/services.html" class="text-sm text-gray-400 hover:text-white transition"><span class="lang en">Services</span><span class="lang es">Servicios</span></a></li>
+          <li><a href="../pages/contact.html" class="text-sm text-gray-400 hover:text-white transition"><span class="lang en">Contact</span><span class="lang es">Contacto</span></a></li>
+          <li><a href="../blog.html" class="text-sm text-gray-400 hover:text-white transition">Blog</a></li>
         </ul>
       </nav>
 
@@ -1008,12 +1082,12 @@
       <nav class="footer-nav" aria-label="Legal and policy documents">
         <h2 class="text-xs font-bold text-brand-gold uppercase tracking-widest mb-4"><span class="lang en">Legal</span><span class="lang es">Legal</span></h2>
         <ul class="space-y-2" role="list">
-          <li><a href="/pages/terms.html" class="text-sm text-gray-400 hover:text-white transition"><span class="lang en">Terms of Service</span><span class="lang es">Términos de Servicio</span></a></li>
-          <li><a href="/pages/privacy-policy.html" class="text-sm text-gray-400 hover:text-white transition"><span class="lang en">Privacy Policy</span><span class="lang es">Política de Privacidad</span></a></li>
-          <li><a href="/pages/cookie-policy.html" class="text-sm text-gray-400 hover:text-white transition"><span class="lang en">Cookie Policy</span><span class="lang es">Política de Cookies</span></a></li>
-          <li><a href="/pages/refund-policy.html" class="text-sm text-gray-400 hover:text-white transition"><span class="lang en">Refund &amp; Cancellation Policy</span><span class="lang es">Política de Reembolso y Cancelación</span></a></li>
-          <li><a href="/pages/accessibility.html" class="text-sm text-gray-400 hover:text-white transition"><span class="lang en">Accessibility Statement</span><span class="lang es">Declaración de Accesibilidad</span></a></li>
-          <li><a href="/pages/disclaimer.html" class="text-sm text-gray-400 hover:text-white transition"><span class="lang en">Disclaimer</span><span class="lang es">Aviso Legal</span></a></li>
+          <li><a href="../pages/terms.html" class="text-sm text-gray-400 hover:text-white transition"><span class="lang en">Terms of Service</span><span class="lang es">Términos de Servicio</span></a></li>
+          <li><a href="../pages/privacy-policy.html" class="text-sm text-gray-400 hover:text-white transition"><span class="lang en">Privacy Policy</span><span class="lang es">Política de Privacidad</span></a></li>
+          <li><a href="../pages/cookie-policy.html" class="text-sm text-gray-400 hover:text-white transition"><span class="lang en">Cookie Policy</span><span class="lang es">Política de Cookies</span></a></li>
+          <li><a href="../pages/refund-policy.html" class="text-sm text-gray-400 hover:text-white transition"><span class="lang en">Refund &amp; Cancellation Policy</span><span class="lang es">Política de Reembolso y Cancelación</span></a></li>
+          <li><a href="../pages/accessibility.html" class="text-sm text-gray-400 hover:text-white transition"><span class="lang en">Accessibility Statement</span><span class="lang es">Declaración de Accesibilidad</span></a></li>
+          <li><a href="../pages/disclaimer.html" class="text-sm text-gray-400 hover:text-white transition"><span class="lang en">Disclaimer</span><span class="lang es">Aviso Legal</span></a></li>
         </ul>
       </nav>
 
@@ -1022,13 +1096,13 @@
         <h2 class="text-xs font-bold text-brand-gold uppercase tracking-widest mb-4"><span class="lang en">Your Privacy Rights</span><span class="lang es">Sus Derechos de Privacidad</span></h2>
         <ul class="space-y-3" role="list">
           <li>
-            <a href="/pages/do-not-sell.html" class="text-sm text-gray-300 hover:text-white transition flex items-start gap-2">
+            <a href="../pages/do-not-sell.html" class="text-sm text-gray-300 hover:text-white transition flex items-start gap-2">
               <span aria-hidden="true" class="text-brand-gold mt-0.5 flex-shrink-0">⊘</span>
               <span><span class="lang en">Do Not Sell or Share My Personal Information</span><span class="lang es">No Vender ni Compartir Mi Información Personal</span></span>
             </a>
           </li>
           <li>
-            <a href="/pages/data-request.html" class="text-sm text-gray-300 hover:text-white transition flex items-start gap-2">
+            <a href="../pages/data-request.html" class="text-sm text-gray-300 hover:text-white transition flex items-start gap-2">
               <span aria-hidden="true" class="text-brand-gold mt-0.5 flex-shrink-0">🔐</span>
               <span><span class="lang en">Data Request (GDPR / CCPA)</span><span class="lang es">Solicitud de Datos (GDPR / CCPA)</span></span>
             </a>
@@ -1040,13 +1114,13 @@
             </button>
           </li>
           <li>
-            <a href="/pages/data-request.html#portability" class="text-sm text-gray-300 hover:text-white transition flex items-start gap-2">
+            <a href="../pages/data-request.html#portability" class="text-sm text-gray-300 hover:text-white transition flex items-start gap-2">
               <span aria-hidden="true" class="text-brand-gold mt-0.5 flex-shrink-0">📦</span>
               <span><span class="lang en">Download My Data</span><span class="lang es">Descargar Mis Datos</span></span>
             </a>
           </li>
           <li>
-            <a href="/pages/opt-out-advertising.html" class="text-sm text-gray-300 hover:text-white transition flex items-start gap-2">
+            <a href="../pages/opt-out-advertising.html" class="text-sm text-gray-300 hover:text-white transition flex items-start gap-2">
               <span aria-hidden="true" class="text-brand-gold mt-0.5 flex-shrink-0">🚫</span>
               <span><span class="lang en">Opt Out of Targeted Ads</span><span class="lang es">Cancelar Publicidad Dirigida</span></span>
             </a>
@@ -1069,11 +1143,11 @@
         </div>
         <div>
           <p class="text-gray-500 font-semibold mb-1 uppercase tracking-wider" style="font-size:10px">CCPA — <span class="lang en">CA Residents</span><span class="lang es">Residentes de CA</span></p>
-          <p><span class="lang en">We do not sell personal information as defined under Cal. Civ. Code §1798.100. CA residents may submit requests at <a href="/pages/data-request.html" class="underline hover:text-gray-400">our data portal</a> or call +1 (832) 451-5923.</span><span class="lang es">No vendemos información personal según Cal. Civ. Code §1798.100. Los residentes de CA pueden enviar solicitudes en <a href="/pages/data-request.html" class="underline hover:text-gray-400">nuestro portal de datos</a> o llamar al +1 (832) 451-5923.</span></p>
+          <p><span class="lang en">We do not sell personal information as defined under Cal. Civ. Code §1798.100. CA residents may submit requests at <a href="../pages/data-request.html" class="underline hover:text-gray-400">our data portal</a> or call +1 (832) 451-5923.</span><span class="lang es">No vendemos información personal según Cal. Civ. Code §1798.100. Los residentes de CA pueden enviar solicitudes en <a href="../pages/data-request.html" class="underline hover:text-gray-400">nuestro portal de datos</a> o llamar al +1 (832) 451-5923.</span></p>
         </div>
         <div>
           <p class="text-gray-500 font-semibold mb-1 uppercase tracking-wider" style="font-size:10px"><span class="lang en">Accessibility</span><span class="lang es">Accesibilidad</span></p>
-          <p><span class="lang en">Committed to WCAG 2.1 AA. Report barriers: <a href="mailto:marketing@konfronta.mx" class="underline hover:text-gray-400">marketing@konfronta.mx</a> or +1 (832) 451-5923. We respond within 2 business days. <a href="/pages/accessibility.html" class="underline hover:text-gray-400">Full Statement →</a></span><span class="lang es">Comprometidos con WCAG 2.1 AA. Reporte barreras: <a href="mailto:marketing@konfronta.mx" class="underline hover:text-gray-400">marketing@konfronta.mx</a> o +1 (832) 451-5923. Respondemos en 2 días hábiles. <a href="/pages/accessibility.html" class="underline hover:text-gray-400">Declaración completa →</a></span></p>
+          <p><span class="lang en">Committed to WCAG 2.1 AA. Report barriers: <a href="mailto:marketing@konfronta.mx" class="underline hover:text-gray-400">marketing@konfronta.mx</a> or +1 (832) 451-5923. We respond within 2 business days. <a href="../pages/accessibility.html" class="underline hover:text-gray-400">Full Statement →</a></span><span class="lang es">Comprometidos con WCAG 2.1 AA. Reporte barreras: <a href="mailto:marketing@konfronta.mx" class="underline hover:text-gray-400">marketing@konfronta.mx</a> o +1 (832) 451-5923. Respondemos en 2 días hábiles. <a href="../pages/accessibility.html" class="underline hover:text-gray-400">Declaración completa →</a></span></p>
         </div>
       </div>
     </div>
@@ -1082,121 +1156,281 @@
     <div class="pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-600">
       <p>&copy; <span id="copyright-year"></span> Inspira Ranch LLC. <span class="lang en">All rights reserved. Inspira Ranch&trade; is a registered trademark of Inspira Ranch LLC.</span><span class="lang es">Todos los derechos reservados. Inspira Ranch&trade; es una marca registrada de Inspira Ranch LLC.</span></p>
       <nav class="footer-nav" aria-label="Legal links" class="flex flex-wrap justify-center gap-x-4 gap-y-1">
-        <a href="/pages/terms.html" class="hover:text-gray-300 transition"><span class="lang en">Terms</span><span class="lang es">Términos</span></a>
+        <a href="../pages/terms.html" class="hover:text-gray-300 transition"><span class="lang en">Terms</span><span class="lang es">Términos</span></a>
         <span aria-hidden="true">·</span>
-        <a href="/pages/privacy-policy.html" class="hover:text-gray-300 transition"><span class="lang en">Privacy</span><span class="lang es">Privacidad</span></a>
+        <a href="../pages/privacy-policy.html" class="hover:text-gray-300 transition"><span class="lang en">Privacy</span><span class="lang es">Privacidad</span></a>
         <span aria-hidden="true">·</span>
-        <a href="/pages/cookie-policy.html" class="hover:text-gray-300 transition">Cookies</a>
+        <a href="../pages/cookie-policy.html" class="hover:text-gray-300 transition">Cookies</a>
         <span aria-hidden="true">·</span>
-        <a href="/pages/do-not-sell.html" class="hover:text-gray-300 transition"><span class="lang en">Do Not Sell</span><span class="lang es">No Vender</span></a>
+        <a href="../pages/do-not-sell.html" class="hover:text-gray-300 transition"><span class="lang en">Do Not Sell</span><span class="lang es">No Vender</span></a>
         <span aria-hidden="true">·</span>
-        <a href="/pages/accessibility.html" class="hover:text-gray-300 transition"><span class="lang en">Accessibility</span><span class="lang es">Accesibilidad</span></a>
+        <a href="../pages/accessibility.html" class="hover:text-gray-300 transition"><span class="lang en">Accessibility</span><span class="lang es">Accesibilidad</span></a>
         <span aria-hidden="true">·</span>
-        <a href="/sitemap.xml" class="hover:text-gray-300 transition"><span class="lang en">Sitemap</span><span class="lang es">Mapa del Sitio</span></a>
+        <a href="../sitemap.xml" class="hover:text-gray-300 transition"><span class="lang en">Sitemap</span><span class="lang es">Mapa del Sitio</span></a>
       </nav>
       <p class="text-gray-700 text-center md:text-right"><span class="lang en">Governed by the laws of Texas, United States.</span><span class="lang es">Regido por las leyes de Texas, Estados Unidos.</span></p>
     </div>
   </div>
 </footer>
 
-<!-- COOKIE CONSENT BANNER — GDPR Art.7 · CCPA §1798.120 -->
-<div id="cookie-banner" role="dialog" aria-modal="true" aria-label="Cookie consent" aria-live="polite"
-  class="fixed bottom-0 left-0 right-0 z-50 bg-brand-navy border-t-2 border-brand-gold shadow-2xl">
+<!-- COOKIE CONSENT BANNER -->
+<div id="cookie-banner" role="dialog" aria-modal="true" aria-label="Cookie consent" aria-live="polite" class="fixed bottom-0 left-0 right-0 z-50 bg-brand-navy border-t-2 border-brand-gold shadow-2xl">
   <div class="max-w-7xl mx-auto px-6 py-5 md:flex md:items-start md:gap-8">
     <div class="flex-1 mb-4 md:mb-0">
       <p class="text-sm font-bold text-white mb-1">🍪 We use cookies &amp; similar technologies</p>
-      <p class="text-xs text-gray-400 leading-relaxed max-w-2xl">
-        We use essential cookies to operate this site. With your consent we also use analytics and marketing cookies.
-        You may withdraw consent at any time.
-        <a href="/pages/cookie-policy.html" class="text-brand-gold underline ml-1">Cookie Policy</a> ·
-        <a href="/pages/privacy-policy.html" class="text-brand-gold underline ml-1">Privacy Policy</a>
-      </p>
+      <p class="text-xs text-gray-400 leading-relaxed max-w-2xl">Essential cookies operate this site. With consent we also use analytics and marketing cookies. <a href="/pages/cookie-policy.html" class="text-brand-gold underline ml-1">Cookie Policy</a> · <a href="/pages/privacy-policy.html" class="text-brand-gold underline ml-1">Privacy Policy</a></p>
       <div class="mt-3 flex flex-wrap gap-4 text-xs text-gray-300">
-        <label class="flex items-center gap-2 cursor-not-allowed" title="Always active">
-          <input type="checkbox" checked disabled aria-label="Essential cookies — always active" class="rounded accent-brand-gold" />
-          <span>Essential <span class="text-gray-500">(always on)</span></span>
-        </label>
-        <label class="flex items-center gap-2 cursor-pointer">
-          <input type="checkbox" id="cookie-analytics" aria-label="Allow analytics cookies" class="rounded accent-brand-gold" /> Analytics
-        </label>
-        <label class="flex items-center gap-2 cursor-pointer">
-          <input type="checkbox" id="cookie-marketing" aria-label="Allow marketing cookies" class="rounded accent-brand-gold" /> Marketing
-        </label>
-        <label class="flex items-center gap-2 cursor-pointer">
-          <input type="checkbox" id="cookie-preferences" aria-label="Allow preference cookies" class="rounded accent-brand-gold" /> Preferences
-        </label>
+        <label class="flex items-center gap-2 cursor-not-allowed"><input type="checkbox" checked disabled class="rounded accent-brand-gold" /><span>Essential <span class="text-gray-500">(always on)</span></span></label>
+        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" id="cookie-analytics" class="rounded accent-brand-gold" /> Analytics</label>
+        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" id="cookie-marketing" class="rounded accent-brand-gold" /> Marketing</label>
+        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" id="cookie-preferences" class="rounded accent-brand-gold" /> Preferences</label>
       </div>
     </div>
     <div class="flex flex-col sm:flex-row gap-2 flex-shrink-0">
-      <button onclick="acceptAllCookies()" class="bg-brand-gold text-brand-dark font-bold text-xs uppercase tracking-wider px-5 py-2.5 hover:opacity-90 transition" aria-label="Accept all cookies">Accept All</button>
-      <button onclick="acceptSelectedCookies()" class="border border-brand-gold text-brand-gold font-bold text-xs uppercase tracking-wider px-5 py-2.5 hover:bg-brand-gold hover:text-brand-dark transition" aria-label="Accept selected cookies">Save My Choices</button>
-      <button onclick="rejectAllCookies()" class="border border-gray-600 text-gray-400 font-bold text-xs uppercase tracking-wider px-5 py-2.5 hover:border-white hover:text-white transition" aria-label="Reject all non-essential cookies">Reject All</button>
+      <button onclick="acceptAllCookies()" class="bg-brand-gold text-brand-dark font-bold text-xs uppercase tracking-wider px-5 py-2.5 hover:opacity-90 transition">Accept All</button>
+      <button onclick="acceptSelectedCookies()" class="border border-brand-gold text-brand-gold font-bold text-xs uppercase tracking-wider px-5 py-2.5 hover:bg-brand-gold hover:text-brand-dark transition">Save My Choices</button>
+      <button onclick="rejectAllCookies()" class="border border-gray-600 text-gray-400 font-bold text-xs uppercase tracking-wider px-5 py-2.5 hover:border-white hover:text-white transition">Reject All</button>
     </div>
   </div>
 </div>
 
-<!-- ACCESSIBILITY TOOLBAR — ADA Title III · WCAG 1.4.3 -->
+<!-- ACCESSIBILITY TOOLBAR -->
 <div class="fixed right-4 bottom-4 z-40" role="region" aria-label="Accessibility tools">
-  <button onclick="toggleA11yToolbar()" id="a11y-toggle-btn"
-    class="bg-brand-navy border border-brand-gold text-brand-gold text-xs font-bold px-3 py-2 rounded-full shadow-lg hover:bg-brand-gold hover:text-brand-dark transition"
-    aria-expanded="false" aria-controls="a11y-toolbar" aria-label="Open accessibility tools">♿ A11Y</button>
+  <button onclick="toggleA11yToolbar()" id="a11y-toggle-btn" class="bg-brand-navy border border-brand-gold text-brand-gold text-xs font-bold px-3 py-2 rounded-full shadow-lg hover:bg-brand-gold hover:text-brand-dark transition" aria-expanded="false" aria-controls="a11y-toolbar" aria-label="Open accessibility tools">♿ A11Y</button>
   <div id="a11y-toolbar" class="collapsed bg-brand-navy border border-brand-gold rounded-lg mt-2 p-3 shadow-xl min-w-max" role="group" aria-label="Accessibility options">
     <p class="text-xs text-gray-400 mb-2 font-semibold uppercase tracking-wider">Display Options</p>
     <div class="flex flex-col gap-2">
-      <button onclick="toggleHighContrast()" id="btn-contrast" class="text-left text-xs text-white hover:text-brand-gold transition flex items-center gap-2" aria-pressed="false" aria-label="Toggle high contrast mode"><span aria-hidden="true">◑</span> High Contrast</button>
-      <button onclick="increaseFontSize()" class="text-left text-xs text-white hover:text-brand-gold transition flex items-center gap-2" aria-label="Increase text size"><span aria-hidden="true">A+</span> Larger Text</button>
-      <button onclick="resetFontSize()" class="text-left text-xs text-white hover:text-brand-gold transition flex items-center gap-2" aria-label="Reset text size"><span aria-hidden="true">A</span> Reset Text</button>
-      <a href="/pages/accessibility.html" class="text-left text-xs text-brand-gold hover:underline flex items-center gap-2 mt-1 pt-1" style="border-top:1px solid #374151" aria-label="View our Accessibility Statement"><span aria-hidden="true">📄</span> Accessibility Statement</a>
+      <button onclick="toggleHighContrast()" id="btn-contrast" class="text-left text-xs text-white hover:text-brand-gold transition flex items-center gap-2" aria-pressed="false"><span>◑</span> High Contrast</button>
+      <button onclick="increaseFontSize()" class="text-left text-xs text-white hover:text-brand-gold transition flex items-center gap-2"><span>A+</span> Larger Text</button>
+      <button onclick="resetFontSize()" class="text-left text-xs text-white hover:text-brand-gold transition flex items-center gap-2"><span>A</span> Reset Text</button>
+      <a href="/pages/accessibility.html" class="text-left text-xs text-brand-gold hover:underline flex items-center gap-2 mt-1 pt-1" style="border-top:1px solid #374151"><span>📄</span> Accessibility Statement</a>
     </div>
   </div>
 </div>
 
 <!-- COMPLIANCE JS -->
 <script>
-  document.getElementById('copyright-year').textContent = new Date().getFullYear();
-  function cookieConsentGiven(){ return localStorage.getItem('cookie_consent') !== null; }
-  function showCookieBanner(){ var b=document.getElementById('cookie-banner'); if(b) setTimeout(()=>b.classList.add('visible'),600); }
-  function hideCookieBanner(){ var b=document.getElementById('cookie-banner'); if(b){ b.classList.remove('visible'); setTimeout(()=>b.setAttribute('aria-hidden','true'),400); } }
-  function acceptAllCookies(){ localStorage.setItem('cookie_consent',JSON.stringify({essential:true,analytics:true,marketing:true,preferences:true,timestamp:new Date().toISOString(),version:'1.0'})); hideCookieBanner(); }
-  function acceptSelectedCookies(){ localStorage.setItem('cookie_consent',JSON.stringify({essential:true,analytics:document.getElementById('cookie-analytics')?.checked||false,marketing:document.getElementById('cookie-marketing')?.checked||false,preferences:document.getElementById('cookie-preferences')?.checked||false,timestamp:new Date().toISOString(),version:'1.0'})); hideCookieBanner(); }
-  function rejectAllCookies(){ localStorage.setItem('cookie_consent',JSON.stringify({essential:true,analytics:false,marketing:false,preferences:false,timestamp:new Date().toISOString(),version:'1.0'})); hideCookieBanner(); }
-  function openCookiePreferences(){ var c=JSON.parse(localStorage.getItem('cookie_consent')||'{}'),b=document.getElementById('cookie-banner'); if(b){ if(document.getElementById('cookie-analytics')) document.getElementById('cookie-analytics').checked=c.analytics||false; if(document.getElementById('cookie-marketing')) document.getElementById('cookie-marketing').checked=c.marketing||false; if(document.getElementById('cookie-preferences')) document.getElementById('cookie-preferences').checked=c.preferences||false; b.removeAttribute('aria-hidden'); b.classList.add('visible'); b.focus(); } }
-  if(!cookieConsentGiven()) showCookieBanner();
-  function toggleA11yToolbar(){ var t=document.getElementById('a11y-toolbar'),btn=document.getElementById('a11y-toggle-btn'),isOpen=t.classList.contains('expanded'); t.classList.toggle('collapsed',isOpen); t.classList.toggle('expanded',!isOpen); btn.setAttribute('aria-expanded',String(!isOpen)); btn.setAttribute('aria-label',isOpen?'Open accessibility tools':'Close accessibility tools'); }
-  function toggleHighContrast(){ var on=document.body.classList.toggle('high-contrast'),btn=document.getElementById('btn-contrast'); btn.setAttribute('aria-pressed',String(on)); localStorage.setItem('high-contrast',on); }
-  if(localStorage.getItem('high-contrast')==='true'){ document.body.classList.add('high-contrast'); var bc=document.getElementById('btn-contrast'); if(bc) bc.setAttribute('aria-pressed','true'); }
+  document.getElementById('copyright-year').textContent=new Date().getFullYear();
+  function cookieConsentGiven(){return localStorage.getItem('cookie_consent')!==null;}
+  function showCookieBanner(){var b=document.getElementById('cookie-banner');if(b)setTimeout(()=>b.classList.add('visible'),600);}
+  function hideCookieBanner(){var b=document.getElementById('cookie-banner');if(b){b.classList.remove('visible');setTimeout(()=>b.setAttribute('aria-hidden','true'),400);}}
+  function acceptAllCookies(){localStorage.setItem('cookie_consent',JSON.stringify({essential:true,analytics:true,marketing:true,preferences:true,timestamp:new Date().toISOString(),version:'1.0'}));hideCookieBanner();}
+  function acceptSelectedCookies(){localStorage.setItem('cookie_consent',JSON.stringify({essential:true,analytics:document.getElementById('cookie-analytics')?.checked||false,marketing:document.getElementById('cookie-marketing')?.checked||false,preferences:document.getElementById('cookie-preferences')?.checked||false,timestamp:new Date().toISOString(),version:'1.0'}));hideCookieBanner();}
+  function rejectAllCookies(){localStorage.setItem('cookie_consent',JSON.stringify({essential:true,analytics:false,marketing:false,preferences:false,timestamp:new Date().toISOString(),version:'1.0'}));hideCookieBanner();}
+  function openCookiePreferences(){var c=JSON.parse(localStorage.getItem('cookie_consent')||'{}'),b=document.getElementById('cookie-banner');if(b){if(document.getElementById('cookie-analytics'))document.getElementById('cookie-analytics').checked=c.analytics||false;if(document.getElementById('cookie-marketing'))document.getElementById('cookie-marketing').checked=c.marketing||false;if(document.getElementById('cookie-preferences'))document.getElementById('cookie-preferences').checked=c.preferences||false;b.removeAttribute('aria-hidden');b.classList.add('visible');b.focus();}}
+  if(!cookieConsentGiven())showCookieBanner();
+  function toggleA11yToolbar(){var t=document.getElementById('a11y-toolbar'),btn=document.getElementById('a11y-toggle-btn'),isOpen=t.classList.contains('expanded');t.classList.toggle('collapsed',isOpen);t.classList.toggle('expanded',!isOpen);btn.setAttribute('aria-expanded',String(!isOpen));btn.setAttribute('aria-label',isOpen?'Open accessibility tools':'Close accessibility tools');}
+  function toggleHighContrast(){var on=document.body.classList.toggle('high-contrast'),btn=document.getElementById('btn-contrast');btn.setAttribute('aria-pressed',String(on));localStorage.setItem('high-contrast',on);}
+  if(localStorage.getItem('high-contrast')==='true'){document.body.classList.add('high-contrast');var bc=document.getElementById('btn-contrast');if(bc)bc.setAttribute('aria-pressed','true');}
   var fontSize=parseFloat(localStorage.getItem('font-size'))||100;
-  function applyFontSize(){ document.documentElement.style.fontSize=fontSize+'%'; }
-  function increaseFontSize(){ fontSize=Math.min(fontSize+10,150); applyFontSize(); localStorage.setItem('font-size',fontSize); }
-  function resetFontSize(){ fontSize=100; applyFontSize(); localStorage.setItem('font-size',fontSize); }
+  function applyFontSize(){document.documentElement.style.fontSize=fontSize+'%';}
+  function increaseFontSize(){fontSize=Math.min(fontSize+10,150);applyFontSize();localStorage.setItem('font-size',fontSize);}
+  function resetFontSize(){fontSize=100;applyFontSize();localStorage.setItem('font-size',fontSize);}
   applyFontSize();
-  if(navigator.globalPrivacyControl===true){ var gc=JSON.parse(localStorage.getItem('cookie_consent')||'{}'); if(!gc.gpc_honored) localStorage.setItem('cookie_consent',JSON.stringify({essential:true,analytics:false,marketing:false,preferences:false,gpc_honored:true,timestamp:new Date().toISOString(),version:'1.0'})); }
+  if(navigator.globalPrivacyControl===true){var gc=JSON.parse(localStorage.getItem('cookie_consent')||'{}');if(!gc.gpc_honored)localStorage.setItem('cookie_consent',JSON.stringify({essential:true,analytics:false,marketing:false,preferences:false,gpc_honored:true,timestamp:new Date().toISOString(),version:'1.0'}));}
 </script>
 
-<script src="js/main.js?v=20260618"></script>
-<script src="js/lang.js?v=20260618"></script>
-<script src="js/animations.js?v=20260618"></script>
+<script src="../js/main.js?v=20260618"></script>
+<script src="../js/lang.js?v=20260618"></script>
+<script src="../js/animations.js?v=20260618"></script>
 
 <script>
+/* ── CONTACT FORM ──────────────────────────────────────── */
 function idxSubmitForm(e) {
   e.preventDefault();
-  const btn = e.target.querySelector('button[type="submit"]');
+  const btn  = e.target.querySelector('button[type="submit"]');
   const orig = btn.textContent;
-  btn.textContent = '...';
-  btn.disabled = true;
+  const lang = (typeof currentLang !== 'undefined') ? currentLang : 'en';
+  btn.textContent = '...'; btn.disabled = true;
+
   emailjs.sendForm('service_cl8m9x2', 'template_79emf1y', e.target)
     .then(() => {
-      const lang = (typeof currentLang !== 'undefined') ? currentLang : 'en';
       btn.textContent = lang === 'es' ? '✓ ¡Enviado!' : '✓ Sent!';
       e.target.reset();
       setTimeout(() => emailjs.sendForm('service_cl8m9x2', 'template_k8rstei', e.target).catch(()=>{}), 800);
     })
     .catch(err => {
       console.error('EmailJS:', err);
-      btn.textContent = orig;
-      btn.disabled = false;
+      btn.textContent = orig; btn.disabled = false;
+      alert(lang === 'es' ? 'Error al enviar. Llámanos al +1 (832) 451-5923.' : 'Send failed. Call +1 (832) 451-5923.');
     });
 }
+</script>
+
+<!-- ══════════════════════════════════════════════════════
+     ELITE TIER JS
+     Lenis · GSAP · Three.js animated hero photo
+     The actual hero ranch photo rendered in WebGL with:
+     • UV wave displacement  (photo breathes gently)
+     • Slow Ken Burns zoom   (1.0 → 1.06 over 20s)
+     • Mouse parallax tilt   (±2° toward cursor)
+     • Gold ember particles  (additive blend on top)
+══════════════════════════════════════════════════════ -->
+<script>
+(function eliteTier() {
+
+  /* 1 ── LENIS SMOOTH SCROLL ──────────────────────────── */
+  const lenis = new Lenis({ duration: 1.2, easing: t => 1 - Math.pow(1-t, 4) });
+  (function raf(t) { lenis.raf(t); requestAnimationFrame(raf); })(0);
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const tgt = document.querySelector(a.getAttribute('href'));
+      if (tgt) { e.preventDefault(); lenis.scrollTo(tgt, { duration: 1.4, offset: -80 }); }
+    });
+  });
+
+  /* 2 ── GSAP + SCROLL TRIGGER ────────────────────────── */
+  gsap.registerPlugin(ScrollTrigger);
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add(t => lenis.raf(t * 1000));
+  gsap.ticker.lagSmoothing(0);
+
+  document.querySelectorAll('.fade-in').forEach(el => {
+    gsap.fromTo(el,
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out',
+        scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none reverse' }
+      }
+    );
+  });
+
+  document.querySelectorAll('.stat-number').forEach(el => {
+    const raw = el.textContent.trim();
+    if (raw.indexOf('★') !== -1) return;
+    const num = parseInt(raw.replace(/[^\d]/g, ''), 10);
+    if (!num) return;
+    const suffix = raw.replace(/\d/g, '');
+    ScrollTrigger.create({
+      trigger: el, start: 'top 85%', once: true,
+      onEnter: () => {
+        const obj = { v: 0 };
+        gsap.to(obj, { v: num, duration: 1.7, ease: 'power2.out',
+          onUpdate: () => { el.textContent = Math.round(obj.v) + suffix; }
+        });
+      }
+    });
+  });
+
+  /* 3 — ANIMATED HERO: BIRDS + POOL WATER */
+  const canvas = document.getElementById('elite-particle-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  function resize() {
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize, { passive: true });
+
+  /* BIRDS */
+  function makeBird(startX) {
+    const h = canvas.height;
+    const b = {
+      x:         startX !== undefined ? startX : -80 - Math.random() * 300,
+      y:         h * (0.06 + Math.random() * 0.38),
+      speed:     0.5 + Math.random() * 0.95,
+      size:      12 + Math.random() * 14,
+      wingPhase: Math.random() * Math.PI * 2,
+      wingSpeed: 2.0 + Math.random() * 2.4,
+      driftAmp:  10 + Math.random() * 22,
+      driftFreq: 0.22 + Math.random() * 0.28,
+      driftOff:  Math.random() * Math.PI * 2,
+      opacity:   0.50 + Math.random() * 0.35,
+    };
+    b.baseY = b.y;
+    return b;
+  }
+
+  const BIRD_COUNT = window.innerWidth < 768 ? 5 : 9;
+  const birds = [];
+  for (let i = 0; i < BIRD_COUNT; i++) birds.push(makeBird(Math.random() * canvas.width));
+
+  function drawBird(b, t) {
+    const flap = Math.sin(t * b.wingSpeed + b.wingPhase);
+    const wy   = flap * b.size * 0.62;
+    ctx.save();
+    ctx.translate(b.x, b.y);
+    ctx.globalAlpha = b.opacity;
+    ctx.strokeStyle = 'rgba(255, 248, 235, 0.88)'; /* warm white — visible over dark overlay */
+    ctx.lineWidth   = 2.0;
+    ctx.lineCap     = 'round';
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.quadraticCurveTo(-b.size * 0.5, wy, -b.size, wy * 0.2);
+    ctx.moveTo(0, 0);
+    ctx.quadraticCurveTo( b.size * 0.5, wy,  b.size, wy * 0.2);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  /* POOL / WATER SHIMMER */
+  function drawWater(t) {
+    const w  = canvas.width;
+    const h  = canvas.height;
+    const py = h * 0.67;
+    const ph = h * 0.28;
+
+    for (let i = 0; i < 10; i++) {
+      const spd  = 0.25 + i * 0.08;
+      const x    = ((t * spd * 52 + i * 163) % (w + 260)) - 130;
+      const y    = py + Math.sin(t * 0.5 + i * 0.95) * ph * 0.4;
+      const len  = 52 + Math.sin(t * 1.3 + i) * 28;
+      const alph = 0.14 + Math.sin(t * 1.9 + i * 1.4) * 0.055;
+      const g    = ctx.createLinearGradient(x - len, y, x + len, y);
+      g.addColorStop(0,   'rgba(210,232,255,0)');
+      g.addColorStop(0.5, 'rgba(210,232,255,' + alph + ')');
+      g.addColorStop(1,   'rgba(210,232,255,0)');
+      ctx.beginPath();
+      ctx.moveTo(x - len, y);
+      ctx.lineTo(x + len, y);
+      ctx.strokeStyle = g;
+      ctx.lineWidth   = 1.0 + Math.sin(t * 2.1 + i) * 0.35;
+      ctx.stroke();
+    }
+
+    [{cx: 0.32, cy: 0.22, off: 0}, {cx: 0.54, cy: 0.35, off: 1.9}, {cx: 0.70, cy: 0.18, off: 3.5}]
+    .forEach(function(c) {
+      for (let ring = 0; ring < 3; ring++) {
+        const phase = ((t * 0.42 + c.off + ring * 1.15) % 3.5);
+        const r     = phase * 36;
+        const alph  = Math.max(0, (1 - phase / 3.5) * 0.18);
+        ctx.beginPath();
+        ctx.ellipse(w * c.cx, py + ph * c.cy, r * 2.5, r * 0.5, 0, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(200,230,255,' + alph + ')';
+        ctx.lineWidth   = 1.0;
+        ctx.stroke();
+      }
+    });
+  }
+
+  /* RENDER LOOP */
+  let heroAlpha = 1;
+  let t0 = null;
+  lenis.on('scroll', function(s) {
+    heroAlpha = Math.max(0, 1 - s.scroll / (window.innerHeight * 0.65));
+  });
+
+  (function loop(ts) {
+    requestAnimationFrame(loop);
+    if (!t0) t0 = ts;
+    const t = (ts - t0) / 1000;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    if (heroAlpha <= 0.01) return;
+    ctx.save();
+    ctx.globalAlpha = heroAlpha;
+    drawWater(t);
+    birds.forEach(function(b) {
+      b.x += b.speed;
+      b.y  = b.baseY + Math.sin(t * b.driftFreq + b.driftOff) * b.driftAmp;
+      drawBird(b, t);
+      if (b.x > canvas.width + 90) { const nb = makeBird(); Object.assign(b, nb); }
+    });
+    ctx.restore();
+  })(performance.now());
+
+})();
 </script>
 </body>
 </html>

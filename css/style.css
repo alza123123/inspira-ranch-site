@@ -707,6 +707,24 @@ nav.scrolled {
 
 
 /* ══════════════════════════════════════════════════════
+   FOOTER NAV RESET — prevent global nav{position:fixed} from leaking into footer
+══════════════════════════════════════════════════════ */
+footer nav,
+nav.footer-nav {
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  z-index: auto !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  display: block !important;
+  align-items: unset !important;
+  justify-content: unset !important;
+}
+
+/* ══════════════════════════════════════════════════════
    FOOTER
 ══════════════════════════════════════════════════════ */
 footer {
@@ -1505,15 +1523,22 @@ img { background: #0D1B3E; }
   #mainNav.scrolled { padding: 10px 20px; }
   #mainNav .hamburger { display: block; }
   #mainNav .nav-links {
-    display: none;
+    display: flex;
+    flex-direction: column;
     position: absolute;
     top: 100%; left: 0; right: 0;
     background: rgba(13,27,62,0.98);
-    flex-direction: column;
-    padding: 24px;
-    gap: 20px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.45);
+    border-top: 1px solid rgba(201,160,46,0.2);
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    gap: 0;
+    transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1);
   }
-  #mainNav .nav-links.open { display: flex; }
+  #mainNav .nav-links.open { max-height: 520px; }
 }
 
 /* ── INDEX REDESIGN — HERO ─────────────────────────────────── */
@@ -1532,44 +1557,56 @@ img { background: #0D1B3E; }
   position: absolute;
   inset: 0;
   background: var(--black);
-  transform: scale(1.05);
-  transition: transform 8s ease;
+  transform: scale(1.12);
+  transition: none;
+  will-change: transform;
 }
-.hero:hover .hero-bg { transform: scale(1); }
+.hero:hover .hero-bg { transform: scale(1.12); }
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 750px;
+  max-width: 800px;
   padding: 0 24px;
 }
 .hero-content h1 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
   color: #fff;
-  line-height: 1.15;
+  line-height: 1.1;
   margin: 16px 0 20px;
+  font-weight: 400;
+  font-style: italic;
+  text-shadow: 0 4px 32px rgba(0,0,0,0.35);
+  letter-spacing: -0.01em;
 }
 .hero-rule { width: 60px; height: 1px; background: #C9A02E; margin: 20px auto; }
 .hero-content p {
   font-size: 1.1rem;
   color: rgba(255,255,255,0.85);
   font-weight: 300;
-  margin-bottom: 36px;
-  line-height: 1.7;
+  margin-bottom: 40px;
+  line-height: 1.8;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 .hero-scroll-hint {
   position: absolute;
-  bottom: 30px; left: 50%;
+  bottom: 32px; left: 50%;
   transform: translateX(-50%);
-  color: rgba(255,255,255,0.5);
-  font-size: 20px;
-  animation: bounce 2s infinite;
+  color: rgba(255,255,255,0.6);
+  font-size: 14px;
   z-index: 2;
+  cursor: default;
 }
 @keyframes bounce {
   0%, 100% { transform: translateX(-50%) translateY(0); }
   50%       { transform: translateX(-50%) translateY(8px); }
+}
+/* Applied after hintFadeIn completes (via JS) */
+.hero-scroll-hint.bouncing {
+  animation: bounce 2.2s ease-in-out infinite;
 }
 
 /* ── INDEX REDESIGN — ABOUT SNAPSHOT ──────────────────────── */
@@ -1885,6 +1922,58 @@ img { background: #0D1B3E; }
 
 
 /* ══════════════════════════════════════════════════════
+   CONTACT FORM — dark-context overrides
+   The EmailJS block above uses light-theme colors.
+   The contact form lives in a dark navy card, so
+   we restore gold labels and translucent dark inputs.
+══════════════════════════════════════════════════════ */
+.contact-form-wrap .form-group label {
+  color: var(--gold) !important;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.contact-form-wrap .form-group input,
+.contact-form-wrap .form-group textarea,
+.contact-form-wrap .form-group select {
+  background: rgba(255,255,255,0.06) !important;
+  border: 1px solid rgba(201,160,46,0.22) !important;
+  border-radius: 0 !important;
+  color: var(--off-white) !important;
+  font-size: 0.95rem !important;
+}
+.contact-form-wrap .form-group input::placeholder,
+.contact-form-wrap .form-group textarea::placeholder {
+  color: rgba(138,149,163,0.55);
+}
+.contact-form-wrap .form-group input:focus,
+.contact-form-wrap .form-group textarea:focus,
+.contact-form-wrap .form-group select:focus {
+  border-color: var(--gold) !important;
+  background: rgba(255,255,255,0.09) !important;
+  outline: none;
+}
+/* Override the 16px mobile font-size for contact form too */
+@media (max-width: 768px) {
+  .contact-form-wrap .form-group input,
+  .contact-form-wrap .form-group textarea,
+  .contact-form-wrap .form-group select {
+    font-size: 16px !important;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════════
+   LOGO CENTERING — block images need margin:auto
+   text-align:center on parent doesn't center block imgs
+══════════════════════════════════════════════════════ */
+.footer-logo       { display: block; margin-left: auto; margin-right: auto; }
+.footer-monogram img { margin: 0 auto; }
+.monogram-divider img { margin: 0 auto; }
+
+
+/* ══════════════════════════════════════════════════════
    MOBILE POLISH — COMPREHENSIVE 375px PASS
 ══════════════════════════════════════════════════════ */
 
@@ -1904,7 +1993,7 @@ img { background: #0D1B3E; }
 
   /* Nav dropdown: 52px per link */
   #mainNav .nav-links {
-    padding: 8px 0;
+    padding: 0;
     gap: 0;
   }
   #mainNav .nav-links a {
@@ -1912,13 +2001,28 @@ img { background: #0D1B3E; }
     display: flex;
     align-items: center;
     padding: 0 24px;
-    font-size: 14px;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    color: rgba(255,255,255,0.88);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
   }
+  #mainNav .nav-links a:hover { color: var(--gold); background: rgba(201,160,46,0.06); }
   #mainNav .nav-links .lang-toggle {
-    margin: 12px 24px 8px;
+    margin: 10px 24px 14px;
     width: calc(100% - 48px);
     text-align: center;
+    border-color: rgba(201,160,46,0.45);
+    color: var(--gold);
+  }
+  /* Lang button when JS moves it outside nav-links into nav-inner */
+  #mainNav .nav-inner > #langBtn {
+    font-size: 10px;
+    padding: 5px 10px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    border-color: rgba(255,255,255,0.45);
+    color: rgba(255,255,255,0.85);
   }
 
   /* ── HERO ─────────────────────────────────────── */
@@ -2117,4 +2221,309 @@ img { background: #0D1B3E; }
   .photo-strip img { height: 160px; }
   .about-grid { gap: 32px; }
   .about-photo img { height: 240px; }
+}
+
+
+/* ══════════════════════════════════════════════════════
+   UI POLISH — HOVER STATES, GRADIENTS, TRANSITIONS
+══════════════════════════════════════════════════════ */
+
+/* Photo strip — hover scale */
+.photo-strip img { transition: transform 0.45s ease; }
+.photo-strip img:hover { transform: scale(1.04); }
+
+/* Pool banner — gradient overlay so text is always readable */
+.pool-banner::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 240px;
+  background: linear-gradient(to top, rgba(8,12,20,0.75) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+.pool-overlay { z-index: 1; }
+.pool-overlay .gold-label { color: var(--gold); }
+
+/* Service cards — lift on hover */
+.svc-card {
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+.svc-card:hover {
+  box-shadow: 0 10px 36px rgba(0,0,0,0.13);
+  transform: translateY(-3px);
+}
+
+/* Accommodation cards — lift on hover */
+.acc-card { transition: box-shadow 0.25s ease; }
+.acc-card:hover { box-shadow: 0 10px 36px rgba(0,0,0,0.18); }
+
+/* Package cards — subtle lift */
+.pkg-card { transition: border-color 0.2s, background 0.2s, transform 0.2s; }
+.pkg-card:hover { transform: translateY(-3px); border-color: rgba(201,160,46,0.5); }
+
+/* Testimonials — subtle left border on hover */
+.testimonial { transition: padding-left 0.25s ease; }
+.testimonial:hover { padding-left: 8px; }
+
+/* Gallery section label — ensure visibility on dark */
+.gallery-section-label { color: var(--gold); }
+
+/* Stats strip stat-number animation on scroll (handled by fade-in) */
+.stat-number { transition: color 0.3s; }
+
+/* About photo — subtle scale on hover */
+.about-photo img { transition: transform 0.5s ease; }
+.about-photo:hover img { transform: scale(1.02); }
+
+/* Landscape banner text legibility improvement */
+.landscape-banner-overlay .gold-label { opacity: 0.9; }
+
+/* Footer links — consistent spacing */
+.footer-copy a { text-decoration: underline; text-underline-offset: 3px; }
+
+/* Mobile: pool banner overlay position */
+@media (max-width: 768px) {
+  .pool-overlay { left: 20px; bottom: 20px; }
+}
+
+/* Smooth image transitions across the board */
+.svc-card-img img,
+.acc-card-img img,
+.gallery-grid img { transition: transform 0.45s ease; }
+
+/* Ensure gallery images don't clip outside their container on hover */
+.gallery-grid { overflow: hidden; }
+.gallery-section-label { margin-bottom: 20px; }
+
+
+/* ══════════════════════════════════════════════════════
+   HERO — CINEMATIC ENTRANCE ANIMATION
+══════════════════════════════════════════════════════ */
+@keyframes heroEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(36px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Override the generic fade-in for the hero — animate immediately on load */
+.hero .hero-content {
+  opacity: 0;
+  transform: translateY(36px);
+  animation: heroEntrance 1.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s both;
+}
+
+/* Scroll hint fades in after hero content */
+.hero-scroll-hint {
+  opacity: 0;
+  animation: hintFadeIn 0.8s ease 1.2s forwards;
+}
+@keyframes hintFadeIn {
+  to { opacity: 1; }
+}
+
+
+/* ══════════════════════════════════════════════════════
+   NAV — ACTIVE PAGE LINK INDICATOR
+══════════════════════════════════════════════════════ */
+#nav-links a {
+  position: relative;
+}
+
+#nav-links a.active {
+  color: var(--gold) !important;
+}
+
+#nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.6;
+}
+
+/* Mobile: active link keeps its color inside dropdown */
+@media (max-width: 768px) {
+  #nav-links a.active {
+    background: rgba(201,160,46,0.08) !important;
+    border-left: 2px solid var(--gold) !important;
+    padding-left: 22px !important;
+  }
+  #nav-links a.active::after { display: none; }
+}
+
+
+/* ══════════════════════════════════════════════════════
+   FOOTER — GRAY RECTANGLE FIX
+   logo-full.png is a JPEG with an opaque background.
+   Hide the image and always render the text logo.
+══════════════════════════════════════════════════════ */
+footer .footer-logo {
+  display: none;
+}
+footer .footer-logo-text {
+  display: block !important;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+  text-decoration: none;
+}
+
+
+/* ══════════════════════════════════════════════════════
+   STATS STRIP — ENHANCED
+══════════════════════════════════════════════════════ */
+.stats-strip {
+  border-top: 1px solid rgba(201,160,46,0.2);
+}
+
+.stat-number {
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+}
+
+
+/* ══════════════════════════════════════════════════════
+   GALLERY — IMAGE FADE-IN ON LAZY LOAD
+══════════════════════════════════════════════════════ */
+.gal-item img {
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.45s ease;
+}
+.gal-item img.loaded {
+  opacity: 1;
+}
+/* Fallback: images already loaded when DOM runs */
+.gal-item img.loaded { opacity: 1; }
+
+
+/* ══════════════════════════════════════════════════════
+   PACKAGE CARDS — FEATURED HIGHLIGHT ENHANCEMENT
+══════════════════════════════════════════════════════ */
+.pkg-card.featured {
+  border-color: var(--gold);
+  background: rgba(201,160,46,0.12);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(201,160,46,0.15);
+  position: relative;
+}
+.pkg-card.featured::before {
+  content: 'MOST POPULAR';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: var(--black);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 3px 12px;
+  white-space: nowrap;
+}
+
+
+/* ══════════════════════════════════════════════════════
+   HERO SCROLL HINT — CIRCLE BUTTON
+══════════════════════════════════════════════════════ */
+.hero-scroll-hint {
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(255,255,255,0.38);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s, color 0.2s;
+}
+.hero-scroll-hint:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+
+/* ══════════════════════════════════════════════════════
+   SECTION HEADER — CONSISTENT SPACING
+══════════════════════════════════════════════════════ */
+.section-header .gold-label {
+  margin-bottom: 12px;
+}
+.section-header h2 {
+  margin-top: 0;
+}
+
+
+/* ══════════════════════════════════════════════════════
+   LANDSCAPE BANNER — PARALLAX SUPPORT
+══════════════════════════════════════════════════════ */
+.landscape-banner > img {
+  will-change: transform;
+}
+
+
+/* ══════════════════════════════════════════════════════
+   CONTACT MAP — REMOVE GRAYSCALE
+══════════════════════════════════════════════════════ */
+.map-container iframe,
+.idx-map iframe {
+  filter: none !important;
+}
+
+/* ════ A11Y widget placement (June 2026) ════
+   ADA/WCAG do not require the accessibility launcher to float over content —
+   only that the controls are reachable and keyboard-navigable (WCAG 2.1.1).
+   Moved to the bottom-LEFT corner so it never collides with the chat launcher
+   (bottom-right) or page content. Toolbar opens upward from the button. */
+/* A11Y widget — June 2026: no longer floats over the UI. The container sits
+   after the footer in the DOM on every page, so static positioning renders it
+   as a quiet utility bar at the very bottom of the site. ADA/WCAG satisfied:
+   reachable in tab order, keyboard-operable, and linked from the skip-nav.
+   (Selector anchors on the stable #a11y-toggle-btn child because the
+   container's aria-label is translated by the i18n system.) */
+div.fixed:has(> #a11y-toggle-btn) {
+  position: static !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #080C14;
+  padding: 20px 16px 28px;
+  border-top: 1px solid rgba(201, 160, 46, 0.15);
+}
+div.fixed:has(> #a11y-toggle-btn) #a11y-toolbar {
+  margin-top: 10px;
+}
+
+/* ── Motion polish (Inspira Ranch · added for smoother feel) ─────────────── */
+:root { --ease-smooth: cubic-bezier(.22, 1, .36, 1); }
+
+.fade-in { transition-timing-function: var(--ease-smooth), var(--ease-smooth); will-change: opacity, transform; }
+.fade-in.visible { will-change: auto; }
+
+/* Opt-in gentle hover lift: add class="hover-lift" to cards/tiles/buttons */
+.hover-lift { transition: transform .45s var(--ease-smooth), box-shadow .45s var(--ease-smooth), opacity .7s var(--ease-smooth); }
+.hover-lift:hover { transform: translateY(-5px); box-shadow: 0 18px 40px rgba(8,12,20,.18); }
+
+/* Lenis smooth-scroll support */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* Accessibility: honor reduced-motion everywhere */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .fade-in { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .hover-lift { transition: none; }
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
 }

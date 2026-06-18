@@ -1,6 +1,7 @@
-node_modules/
-.env
-.env.local
-img/Downloads/*.dmg
-img/Downloads/*.pkg
-img/Downloads/*.pdf
+node_modules
+.netlify
+img/Downloads/.DS_Store
+img/.DS_Store
+img/album-d460253150-downloads-pt1/.DS_Store
+tailwind.input.css
+tailwind.config.js

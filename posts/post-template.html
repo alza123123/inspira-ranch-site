@@ -5,7 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{TITLE}} | Inspira Ranch Blog</title>
   <meta name="description" content="{{EXCERPT}}" />
-  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/tailwind.css" />
+  <link rel="stylesheet" href="../css/style.css?v=20260618" />
+  <style>
+    :focus-visible{outline:3px solid #C9A02E;outline-offset:3px;}
+    @media(forced-colors:active){a,button{forced-color-adjust:auto;}.compliance-badge{border:1px solid ButtonText;}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important;}}
+    .skip-link{position:absolute;top:-9999px;left:0;background:#C9A02E;color:#0D1B3E;font-weight:700;padding:12px 24px;z-index:9999;text-decoration:none;}
+    .skip-link:focus{top:0;}
+    #cookie-banner{transform:translateY(100%);transition:transform 0.35s ease;}
+    #cookie-banner.visible{transform:translateY(0);}
+    #a11y-toolbar{transition:max-height 0.3s ease,opacity 0.3s ease;}
+    #a11y-toolbar.collapsed{max-height:0;opacity:0;overflow:hidden;}
+    #a11y-toolbar.expanded{max-height:200px;opacity:1;}
+    body.high-contrast{filter:contrast(1.3) brightness(1.05);} body.high-contrast #a11y-toggle-btn{background:#C9A02E !important;color:#0D1B3E !important;border-color:#C9A02E !important;}
+    .compliance-badge{font-size:0.6rem;letter-spacing:0.1em;font-weight:700;text-transform:uppercase;padding:2px 8px;border-radius:2px;}
+  </style>
   <style>
     .post-hero {
       padding: 10rem 1.5rem 4rem;
@@ -89,6 +104,9 @@
   </style>
 </head>
 <body>
+<!-- SKIP NAVIGATION LINKS (WCAG 2.4.1) -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<a href="#footer-nav"   class="skip-link">Skip to footer navigation</a>
 
 <nav id="mainNav">
   <div class="nav-inner">
@@ -108,7 +126,7 @@
 </nav>
 
 <!-- POST HERO -->
-<div class="post-hero">
+<div class="post-hero" id="main-content" tabindex="-1">
   <span class="section-label" style="color:var(--gold)">{{CATEGORY}}</span>
   <h1>{{TITLE}}</h1>
   <div class="post-meta">
@@ -161,16 +179,17 @@
       <span>638 Mill Gate Rd<br>Livingston, TX 77351</span>
     </div>
   </div>
-  <div class="footer-monogram">
-    <img src="../img/logo-monogram.png" alt="IR" onerror="this.style.display='none'">
-  </div>
   <div class="footer-copy">
     <span data-key="footer.copy">© 2026 Inspira Ranch. All rights reserved.</span>
+    <span style="margin:0 8px;opacity:0.4">·</span>
+    <a href="../pages/privacy-policy.html" data-key="footer.privacy" style="color:var(--gray);text-decoration:none">Privacy Policy</a>
+    <span style="margin:0 8px;opacity:0.4">·</span>
+    <a href="../pages/terms.html" data-key="footer.terms" style="color:var(--gray);text-decoration:none">Terms of Service</a>
   </div>
 </footer>
 
-<script src="../js/main.js"></script>
-<script src="../js/lang.js"></script>
-<script src="../js/animations.js"></script>
+<script src="../js/main.js?v=20260618"></script>
+<script src="../js/lang.js?v=20260618"></script>
+<script src="../js/animations.js?v=20260618"></script>
 </body>
 </html>

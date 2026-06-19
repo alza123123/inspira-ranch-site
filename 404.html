@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found | Inspira Ranch</title>
+  <meta name="robots" content="noindex" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/tailwind.css" />
+  <link rel="stylesheet" href="/css/style.css?v=20260618" />
+  <style>
+    .nf-wrap{min-height:78vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;background:var(--navy);}
+    .nf-code{font-family:var(--font-heading);font-size:clamp(4rem,12vw,7rem);color:var(--gold);line-height:1;margin:0;}
+    .nf-wrap h1{font-family:var(--font-heading);font-style:italic;font-weight:400;color:var(--white);font-size:clamp(1.6rem,4vw,2.4rem);margin:8px 0 14px;}
+    .nf-wrap p{color:var(--gray);font-family:var(--font-body);max-width:480px;margin:0 auto 28px;line-height:1.7;}
+    .nf-btn{display:inline-block;background:var(--gold);color:var(--navy);font-family:var(--font-body);font-weight:600;letter-spacing:.04em;padding:14px 30px;border-radius:4px;text-decoration:none;}
+    .nf-btn:hover{filter:brightness(1.08);}
+  </style>
+</head>
+<body>
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo-text">Inspira Ranch</a>
+    <div class="nav-links" id="nav-links">
+      <a href="/" data-key="nav.home">Home</a>
+      <a href="/pages/about.html" data-key="nav.about">About</a>
+      <a href="/pages/services.html" data-key="nav.services">Services</a>
+      <a href="/pages/contact.html" data-key="nav.contact">Contact</a>
+      <a href="/blog.html" data-key="nav.blog">Blog</a>
+      <button id="langBtn" onclick="toggleLang()" class="lang-toggle">🌐 Español</button>
+    </div>
+  </div>
+</nav>
+<div class="nf-wrap" id="main-content" tabindex="-1">
+  <p class="nf-code">404</p>
+  <h1><span class="lang en">This page wandered off the ranch</span><span class="lang es">Esta página se perdió en el rancho</span></h1>
+  <p>
+    <span class="lang en">The page you're looking for doesn't exist or has moved. Let's get you back to planning your event at Inspira Ranch.</span>
+    <span class="lang es">La página que busca no existe o ha sido movida. Volvamos a planear su evento en Inspira Ranch.</span>
+  </p>
+  <a class="nf-btn" href="/"><span class="lang en">Return Home</span><span class="lang es">Volver al Inicio</span></a>
+</div>
+<script src="/js/main.js?v=20260618"></script>
+<script src="/js/lang.js?v=20260618"></script>
+</body>
+</html>
